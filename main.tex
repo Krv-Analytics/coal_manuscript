@@ -11,6 +11,11 @@
 \usepackage{xcolor}
 \usepackage{float}
 
+
+\usetikzlibrary{shapes,positioning}
+
+
+
 \usepackage[document]{ragged2e}
 \usepackage{subcaption}
 
@@ -46,8 +51,8 @@
 
 
 
-\title{Strategically Strategizing a Strategy - \textit{WIP draft}}
-
+\title{Coal Manuscript - \textit{WIP draft}}
+\author{}
 
 % %the following, to add affiliations with authors, is from: https://tex.stackexchange.com/a/604401/303504
 
@@ -82,6 +87,15 @@
 \begin{document}
 
 \maketitle
+% - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - %
+
+% Outline
+
+% - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - %
+
+\input{outline}
+
+
 
 % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - %
 
@@ -89,7 +103,16 @@
 
 % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - %
 
+
 \input{intro}
+
+% - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - %
+
+% Summary Fig 1
+
+% - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - %
+
+\input{FIG-CoalFleetPartition}
 
 \section{What about Deep Learning?}
 
@@ -218,7 +241,9 @@ The resulting model has 12 unique groupings of coal plants. While our groupings 
         \includesvg[inkscapelatex=false,width=1\linewidth]{svg_figs/vulnerability_barPolar.svg}
     \end{minipage}
         
-    \caption{\textbf{Proximity To Retirement Graphs} Nodes representing coal plants with the highest percentage of retiring capacity per plant are identified as target nodes. The edges in the graph are weighted to indicate the relationships between nodes. Employing Dijkstra's algorithm, we determine the shortest path and corresponding distance from these target nodes to every other node in the graph. This distance signifies the level of similarity; nodes with shorter paths to target nodes share more similar attributes with the retiring nodes. Conversely, nodes with longer distances have more dissimilar characteristics, indicating a greater divergence between the plants contained within them and the attributes of the retiring plants within target nodes. \textit{explain edge weighting here as well?}}
+    \caption{\textbf{Proximity To Retirement Graphs} Nodes representing coal plants with the highest percentage of retiring capacity per plant are identified as target nodes. The edges in the graph are weighted to indicate the relationships between nodes. Employing Dijkstra's algorithm, we determine the shortest path and corresponding distance from these target nodes to every other node in the graph.
+    % This is our approximation for a "coarse-grained" geodesic distance in high dimensional space
+    This distance signifies the level of similarity; nodes with shorter paths to target nodes share more similar attributes with the retiring nodes. Conversely, nodes with longer distances have more dissimilar characteristics, indicating a greater divergence between the plants contained within them and the attributes of the retiring plants within target nodes. \textit{explain edge weighting here as well?}}
     \label{fig:3}
 \end{figure}
 
