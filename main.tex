@@ -1,26 +1,20 @@
 % !TEX program = pdflatex
 
 \documentclass{article}
-\usepackage{graphicx}
-\usepackage{tikz}
 \usepackage{svg}
 \usepackage{subfiles}
 \usepackage{hyperref}
 \usepackage{hyperxmp}
 \usepackage{qrcode}
-\usepackage{xcolor}
 \usepackage{float}
-
-
-\usetikzlibrary{shapes,positioning}
-
-
 
 \usepackage[document]{ragged2e}
 \usepackage{subcaption}
 
-
-\usetikzlibrary{backgrounds}
+\usepackage{graphicx}
+% \usetikzlibrary{shapes, positioning}
+\usepackage{tikz}
+\usepackage{xcolor}
 
 \usepackage{geometry}
  \geometry{
@@ -49,12 +43,10 @@
   citecolor  = bleu,
 }
 
-
-
 \title{Coal Manuscript - \textit{WIP draft}}
 \author{}
 
-% %the following, to add affiliations with authors, is from: https://tex.stackexchange.com/a/604401/303504
+% the following, to add affiliations with authors, is from: https://tex.stackexchange.com/a/604401/303504
 
 \let\truehypersetup\hypersetup
 \renewcommand\hypersetup[1]{}
@@ -87,40 +79,52 @@
 \begin{document}
 
 \maketitle
-% - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - %
 
-% Outline
 
-% - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - %
+%  ╭──────────────────────────────────────────────────────────╮
+%  │ Outline                                                  |
+%  ╰──────────────────────────────────────────────────────────╯
 
 \input{outline}
 
 
-
-% - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - %
-
-% INTRO
-
-% - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - %
-
+%  ╭──────────────────────────────────────────────────────────╮
+%  │ Intro                                                    |
+%  ╰──────────────────────────────────────────────────────────╯
 
 \input{intro}
 
-% - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - %
 
-% Summary Fig 1
-
-% - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - % - %
+%  ╭──────────────────────────────────────────────────────────╮
+%  │ Results                                                  |
+%  ╰──────────────────────────────────────────────────────────╯
 
 \input{FIG-CoalFleetPartition}
+
+
+%  ╭──────────────────────────────────────────────────────────╮
+%  │ EXTRAs - will be moved/deleted                           |
+%  ╰──────────────────────────────────────────────────────────╯
+
 
 \section{What about Deep Learning?}
 
 \subsection{A Changing Retirement Landscape}
 
-The evolution of coal plant retirements has undergone a significant transformation. In the past, retirements often occurred organically, primarily driven by internal financial considerations, changing market dynamics, or technological obsolescence \textit{insert citation}. These retirements were driven by the economic viability of coal plants and their ability to compete in the energy market. Such retirements were not directly tied to explicit environmental or climate goals. However, the contemporary landscape is marked by a paradigm shift in the rationale behind coal plant retirements. The urgency to address climate change, reduce greenhouse gas emissions, and transition toward cleaner energy sources has become a driving force behind retirement decisions. This shift is propelled by the recognition of the critical role of coal-fired power generation in contributing to global carbon emissions and exacerbating climate-related challenges.
+The evolution of coal plant retirements has undergone a significant transformation. 
+In the past, retirements often occurred organically, primarily driven by internal financial considerations, 
+changing market dynamics, or technological obsolescence \textit{insert citation}. 
+These retirements were driven by the economic viability of coal plants and their ability to compete 
+in the energy market. Such retirements were not directly tied to explicit environmental or climate goals. 
+However, the contemporary landscape is marked by a paradigm shift in the rationale behind coal plant retirements. 
+The urgency to address climate change, reduce greenhouse gas emissions, and transition toward cleaner energy 
+sources has become a driving force behind retirement decisions. This shift is propelled by the recognition of 
+the critical role of coal-fired power generation in contributing to global carbon emissions and exacerbating 
+climate-related challenges.
 
-While past retirements might offer insights into operational challenges and procedural aspects of phasing out coal plants, they do not serve as reliable indicators for predicting future retirements. Several reasons underscore this departure from past trends:
+While past retirements might offer insights into operational challenges and procedural aspects of phasing out 
+coal plants, they do not serve as reliable indicators for predicting future retirements. Several reasons underscore 
+this departure from past trends:
 
 \begin{itemize}
     \item The current impetus for coal phaseout arises from external factors like international climate agreements (e.g., the Paris Agreement), increased public awareness of environmental issues, and regulatory frameworks that prioritize emission reductions. These factors introduce new dynamics that were absent or less pronounced during the organic retirement era.
@@ -173,15 +177,6 @@ The resulting model has 12 unique groupings of coal plants. While our groupings 
 \definecolor{col8}{HTML}{b40426}
 
 \subsection{Coal Plant Groupings Breakdown}
-
-\begin{figure}[H]
-    \centering
-    \includesvg[inkscapelatex=false,width=1\columnwidth]{svg_figs/group_heatmap.svg}
-    \centering
-    \includesvg[inkscapelatex=false,width=1.2\columnwidth]{svg_figs/group_zscores.svg}  
-    \label{fig:4}
-    \caption{\textbf{Group Analysis} The trade-offs, potential benefits, and significant attributes of each group can be discerned.}
-\end{figure}
 
 \begin{figure}[H]
     \includesvg[inkscapelatex=false,width=1\columnwidth]{svg_figs/group_map.svg}

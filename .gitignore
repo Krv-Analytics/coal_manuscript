@@ -6,6 +6,7 @@
 *.out
 *.synctex.gz
 *.toc
+*.pdf
 
 # Ignore build directories
 _build
