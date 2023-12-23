@@ -13,10 +13,8 @@
 \definecolor{Group7}{HTML}{F5A182} % Light Peach
 \definecolor{Group3}{HTML}{EA7B60}
 
-\begin{figure}[ht]
 \centering
   \includesvg[inkscapelatex=false,width=1\columnwidth]{temp_map.svg}
-  % \caption{\textbf{Predicting Planned Retirements in the US Coal Plant Fleet}}
   
   \centering
     \begin{tikzpicture}[node distance=0.15cm,
@@ -51,35 +49,35 @@
       \node [box, below=of box1, fill=Group3] (box4) {%
         \textbf{Group 3 - High Health Impact Plants} \\[2pt]
         \textit{\tiny 28.81\% of capacity, 29 plants} \\[2pt]
-        This group boasts highest SO2 emission rates (lb/mmBtu) of any group, as well as high average PM2.5 emission rates. The group consists of old coal plants (45 yrs old, the highest average age of any group), with roughly 45\% of them planned for retirement. Despite this, the group represents some of the most profitable coal plants in the nation all located in states with Republican legislatures.
+        This group boasts highest SO\textsubscript{2} emission rates (lb/mmBtu) of any group, as well as high average PM2.5 emission rates. The group consists of old coal plants (45 yrs old, the highest average age of any group), with roughly 45\% of them planned for retirement. Despite this, the group represents some of the most profitable coal plants in the nation all located in states with Republican legislatures.
       };
 
       % Box 5
       \node [box, right=of box4, below=of box2, fill=Group4] (box5) {%
         \textbf{Group 4 - Stereotypical Plants, Diverse Impacts Subset} \\[2pt]
         \textit{\tiny 29.18\% of capacity, 74 plants} \\[2pt]
-        Averaging a high number of people within 3 miles of coal plants, but not located within disadvantaged communities. Of the 25\% of plants that plan to retire, the average retirement age is notably old (60 years, while the plants are currently 40 years old); 35\% are owned by entities with climate targets. This group accounts for the highest share of CO2 emissions but boasts middle-of-the-road CO2 efficiency rates, while emitting above-average levels of NOx and SO2.
+        Averaging a high number of people within 3 miles of coal plants, but not located within disadvantaged communities. Of the 25\% of plants that plan to retire, the average retirement age is notably old (60 years, while the plants are currently 40 years old); 35\% are owned by entities with climate targets. This group accounts for the highest share of CO\textsubscript{2} emissions but boasts middle-of-the-road CO\textsubscript{2} efficiency rates, while emitting above-average levels of NO\textsubscript{x} and SO\textsubscript{2}.
       };
 
       % Box 6
       \node [box, right=of box5, below=of box3, fill=Group5] (box6) {%
         \textbf{Group 5 - Young Plants Group} \\[2pt]
         \textit{\tiny 4.12\% of capacity, 11 plants} \\[2pt]
-        Averaging 32 years old, these plants have above average CO2 emission rates but low criteria air pollutant emissions. These plants are located in lower income communities than all groups except \textbf{Group 1}, but do not have a lot of people living with 3 miles of the plants, nor an out-sized impact on disadvantaged communities (averaging the 44th percentile for demographic index). Regardless of higher profitability and young ages, these plants are located in grid regions with a higher-than-average dependency on wind power and local/regional wind potential at roughly half their coal LCOEs.
+        Averaging 32 years old, these plants have above average CO\textsubscript{2} emission rates but low criteria air pollutant emissions. These plants are located in lower income communities than all groups except \textbf{Group 1}, but do not have a lot of people living with 3 miles of the plants, nor an out-sized impact on disadvantaged communities (averaging the 44th percentile for demographic index). Regardless of higher profitability and young ages, these plants are located in grid regions with a higher-than-average dependency on wind power and local/regional wind potential at roughly half their coal LCOEs.
       };
 
       % Box 7
       \node [box, below=of box4, fill=Group6] (box7) {%
         \textbf{Group 6 - Retiring Plants in Anti-Coal Regions} \\[2pt]
         \textit{\tiny 5.79\% of capacity, 14 plants} \\[2pt]
-        Aging plants situated in counties overwhelmingly opposed to coal (63\% of people), led by democratic governors and navigating complex legislative landscapes. However, these counties have seen the largest shift in pro-coal sentiment of all groups (\textbf{+} 6.25\% of people \textit{opposed} to limiting coal plant CO2 emissions since 2018). These plants faced negative cashflows in 2020, regardless of relative profitability since 2012. The majority of plants are slated for retirement (67\% of plants and 71.5\% of capacity), albeit around 60 years old.
+        Aging plants situated in counties overwhelmingly opposed to coal (63\% of people), led by democratic governors and navigating complex legislative landscapes. However, these counties have seen the largest shift in pro-coal sentiment of all groups (\textbf{+} 6.25\% of people \textit{opposed} to limiting coal plant CO\textsubscript{2} emissions since 2018). These plants faced negative cashflows in 2020, regardless of relative profitability since 2012. The majority of plants are slated for retirement (67\% of plants and 71.5\% of capacity), albeit around 60 years old.
       };
 
       % Box 8
       \node [box, right=of box7, below=of box5, fill=Group7] (box8) {%
         \textbf{Group 7 - Air Quality Offenders} \\[2pt]
         \textit{\tiny 2.91\% of capacity, 6 plants} \\[2pt]
-        The highest criteria air pollutant emission rates of any group, topping the charts for NOx, Mercury, and PM2.5 emissions. Located in very pro-coal counties (60\% opposed to limiting coal plant emissions) and with \textit{zero} planned full or partial retirements, these plants have extremely high capacity factors but suprisingly low health impacts. Although there are no planned retirements, 2 of the plants are owned by entities with mandatory carbon emissions reduction targets in place.
+        The highest criteria air pollutant emission rates of any group, topping the charts for NO\textsubscript{x}, Mercury, and PM2.5 emissions. Located in very pro-coal counties (60\% opposed to limiting coal plant emissions) and with \textit{zero} planned full or partial retirements, these plants have extremely high capacity factors but suprisingly low health impacts. Although there are no planned retirements, 2 of the plants are owned by entities with mandatory carbon emissions reduction targets in place.
       };
 
       % Box 9
@@ -92,6 +90,5 @@
       % Title
       % \node [title, above=of box1] (maintitle) {\large Summary Title};
 
-  \end{tikzpicture}
-\caption{\textbf{Classifying the US Coal Fleet} The color of each node corresponds to the percent of coal plants within the node with plans to retire. Nodes with a higher percentage of retiring coal plants are assigned a darker red. The size of each node is proportional to the total amount of carbon dioxide (CO2) emissions in 2022 from the coal plants within the node (scaled). Larger nodes indicate a higher cumulative emission of CO2 from the associated coal plants.}
-\end{figure}
+\end{tikzpicture}
+

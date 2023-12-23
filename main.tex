@@ -46,7 +46,7 @@
 \title{Coal Manuscript - \textit{WIP draft}}
 \author{}
 
-% the following, to add affiliations with authors, is from: https://tex.stackexchange.com/a/604401/303504
+% To add affiliations with authors, see: https://tex.stackexchange.com/a/604401/303504
 
 \let\truehypersetup\hypersetup
 \renewcommand\hypersetup[1]{}
@@ -85,7 +85,7 @@
 %  │ Outline                                                  |
 %  ╰──────────────────────────────────────────────────────────╯
 
-\input{outline}
+%  \input{outline}
 
 
 %  ╭──────────────────────────────────────────────────────────╮
@@ -94,12 +94,43 @@
 
 \input{intro}
 
+\input{motivating_methodology.tex}
+
 
 %  ╭──────────────────────────────────────────────────────────╮
 %  │ Results                                                  |
 %  ╰──────────────────────────────────────────────────────────╯
 
-\input{FIG-CoalFleetPartition}
+\input{results.tex}
+
+
+%  ╭──────────────────────────────────────────────────────────╮
+%  │ Discussion                                               |
+%  ╰──────────────────────────────────────────────────────────╯
+
+
+%  ╭──────────────────────────────────────────────────────────╮
+%  │ Methods                                                  |
+%  ╰──────────────────────────────────────────────────────────╯
+
+
+%  ╭──────────────────────────────────────────────────────────╮
+%  │ Post-paper                                               |
+%  ╰──────────────────────────────────────────────────────────╯
+
+\section{Supplemental Info/Figs}
+
+\end{document}
+
+%%%%%%%%%%%
+% Group Map Locations
+%%%%%%%%%%%
+
+% \begin{figure}[H]
+%     \includesvg[inkscapelatex=false,width=1\columnwidth]{svg_figs/group_map.svg}
+%     \label{fig:2}
+%     \caption{\textbf{Plant Group Locations} Illustrates the locations of the plants in every group.}
+% \end{figure}
 
 
 %  ╭──────────────────────────────────────────────────────────╮
@@ -107,92 +138,13 @@
 %  ╰──────────────────────────────────────────────────────────╯
 
 
-\section{What about Deep Learning?}
+% \begin{figure}[H]
+%     \includesvg[inkscapelatex=false,width=1\columnwidth]{svg_figs/ml_featureImportance_accuracy.svg}
+%     \includesvg[inkscapelatex=false,width=1\columnwidth]{svg_figs/ml_prediction_accuracy.svg}
+%     \label{fig:2}
+%     \caption{\textbf{Predicting Planned Retirements in the US Coal Plant Fleet} In the top figure, there is a clear difference between each method, with no clear consensus on a subset of variables that are important for predicting planned retirement. In the bottom figure, F1-Scores averaging 0.5 indicate that across 100 different runs, these models do not preform well in terms of their ability to balance precision and recall. 0.8 is considered the standard threshold at which F1-Scores indicate a model has preformed well. In other words, these methods poorly predict planned retirement and the key variables responsible for it.}
+% \end{figure}
 
-\subsection{A Changing Retirement Landscape}
-
-The evolution of coal plant retirements has undergone a significant transformation. 
-In the past, retirements often occurred organically, primarily driven by internal financial considerations, 
-changing market dynamics, or technological obsolescence \textit{insert citation}. 
-These retirements were driven by the economic viability of coal plants and their ability to compete 
-in the energy market. Such retirements were not directly tied to explicit environmental or climate goals. 
-However, the contemporary landscape is marked by a paradigm shift in the rationale behind coal plant retirements. 
-The urgency to address climate change, reduce greenhouse gas emissions, and transition toward cleaner energy 
-sources has become a driving force behind retirement decisions. This shift is propelled by the recognition of 
-the critical role of coal-fired power generation in contributing to global carbon emissions and exacerbating 
-climate-related challenges.
-
-While past retirements might offer insights into operational challenges and procedural aspects of phasing out 
-coal plants, they do not serve as reliable indicators for predicting future retirements. Several reasons underscore 
-this departure from past trends:
-
-\begin{itemize}
-    \item The current impetus for coal phaseout arises from external factors like international climate agreements (e.g., the Paris Agreement), increased public awareness of environmental issues, and regulatory frameworks that prioritize emission reductions. These factors introduce new dynamics that were absent or less pronounced during the organic retirement era.
-    \item Decisions to retire coal plants are now embedded in a complex web of considerations, including economic viability, technological feasibility, regulatory compliance, community impacts, and climate objectives. This multi-dimensional decision landscape surpasses the relatively simpler determinants of past retirements.
-    \item The involvement of diverse stakeholders, from local communities to environmental organizations, has gained prominence in modern coal phaseout initiatives. Ensuring a just transition for affected communities and addressing social equity concerns were not as central to past retirements.
-    \item Recently, crypto-currency has also breathed life into dying coal plants. Through both PPAs and increased grid loads, server farms primarily used to mine bit-coin and other blockchain based currencies have began purchasing cheap power from coal plants on the brink, hungry for alternative or additional sources of revenue. \textit{Need citations here, heard about this through work - will need to get more info and make this punchier}
-\end{itemize}
-
-The shift from organic retirements to strategic retirements motivated by climate and policy objectives introduces complexities that make the application of supervised machine learning challenging in the context of predicting future coal plant retirements. Training on data that includes retired coal plants fails to capture the transformational shift in decision drivers. The need for creative retirement solutions continues to be of paramount importance - assuming coal plants will retire on their own is overly optimistic, neglecting the pressing need for a transition to clean energy.\\
-
-\subsection{Coal is a High-Dimensional Problem}
-
-The coal plant retirement problem suffers from \textit{the curse of dimensionality}, where as the dimensions of a dataset increase, the number of data points needed to guarantee reliable results grows exponentially. In the case of the current US coal fleet, we have a very limited number of coal plants with very high-dimensional data associated with each. As such, standard unsupervised methods fail to reliably predict which active coal plants have planned retirements on the books.
-
-\begin{figure}[H]
-    \includesvg[inkscapelatex=false,width=1\columnwidth]{svg_figs/ml_featureImportance_accuracy.svg}
-    \includesvg[inkscapelatex=false,width=1\columnwidth]{svg_figs/ml_prediction_accuracy.svg}
-    \label{fig:2}
-    \caption{\textbf{Predicting Planned Retirements in the US Coal Plant Fleet} In the top figure, there is a clear difference between each method, with no clear consensus on a subset of variables that are important for predicting planned retirement. In the bottom figure, F1-Scores averaging 0.5 indicate that across 100 different runs, these models do not preform well in terms of their ability to balance precision and recall. 0.8 is considered the standard threshold at which F1-Scores indicate a model has preformed well. In other words, these methods poorly predict planned retirement and the key variables responsible for it.}
-\end{figure}
-
-Additionally, the current arsenal of artificial intelligence methods fall short when it comes to comparing and analyzing complex objects across different data disciplines. In regards to coal plants, we aim to analyze Environmental, Technical, Financial, Political, and Health data, making it again difficult to understand the complex interactions between all variables at a high level. Even advanced deep learning algorithms, such as Gradient Boosting, struggle to effectively overcome the curse of dimensionality and provide accurate results. When looking to understand the variables that are important in predicting whether a coal plant will retire, different deep learning methods give us different results, showing how complex the coal plant retirement problem really is.
-
-\section{Combining Topology and Graphs}
-\subsection{Advantages of a Novel Approach}
-We aim to acknowledge the transformational nature of coal phaseout motivations and propose an analytical framework that reflects the dynamic and multidimensional factors influencing coal plant retirement decisions. As such, we propose a novel method of analyzing the US coal plant space to provide new and actionable insight. Here is what our methodology adds to the academic discipline:
-
-\begin{itemize}
-    \item \textbf{Contextual Flexibility:} By not relying on predefined composite scores or fixed weights, our method can adapt to different scenarios, regulatory environments, and stakeholder perspectives.
-    \item \textbf{Holistic Understanding:} By allowing for a more nuanced and comprehensive understanding of a coal plant's/group of coal plants' performance, across various dimensions, we enable stakeholders to make more informed decisions.
-    \item \textbf{Transparency:} Our approach makes the evaluation process more transparent by presenting data and relationships directly. This transparency can build trust among stakeholders, and help to avoid the interpretability issues inherent to composite scores.
-    \item \textbf{Customization:} Different coal plants have unique characteristics. Our method can accommodate these variations, providing a more accurate representation of a group's strengths and weaknesses.
-\end{itemize}
-
-We do not claim to have solved the coal plant retirement problem, nor to have figured out the best and fastest way to retire all coal plants. Instead, we bring a brand new perspective that gives policy makers and other stakeholders an in-depth understanding of the coal fleet from multiple perspectives.
-
-\subsection{Coal Graph Model}
-Our goal is to map out the landscape of US Coal Plant Fleet. To that end, we generate a graph model of our data set that captures the relationships between all 269 coal plants in question with respect to the available data fields. The graph and resulting groups arise from the structure of our high dimensional data set, whose complex relationships are distilled into a graph model. Unlike traditional clustering methods, we use the graph model’s structure to build digestible descriptions of these groups. This allows us to illustrate which features connect the coal plants in each group, and compare group profiles across all available data fields.
-
-The resulting model has 12 unique groupings of coal plants. While our groupings are derived from every feature of the data set, looking at homogeneous data fields within each group gives a high-level and digestible overview of why certain plants are grouped together. Here, we label the groups for increased interpretability:
-
-\definecolor{col0}{HTML}{3B4CC0}
-\definecolor{col1}{HTML}{6282ea}
-\definecolor{col2}{HTML}{8db0fe}
-\definecolor{col3}{HTML}{b9d0f9}
-\definecolor{col4}{HTML}{dddcdc}
-\definecolor{col5}{HTML}{f5c4ac}
-\definecolor{col6}{HTML}{f4987a}
-\definecolor{col7}{HTML}{dd5f4b}
-\definecolor{col8}{HTML}{b40426}
-
-\subsection{Coal Plant Groupings Breakdown}
-
-\begin{figure}[H]
-    \includesvg[inkscapelatex=false,width=1\columnwidth]{svg_figs/group_map.svg}
-    \label{fig:2}
-    \caption{\textbf{Plant Group Locations} Illustrates the locations of the plants in every group.}
-\end{figure}
-
-\subsection{Profiling Planned Coal Retirements}
-
-\highlight{How to interpret the model below:
-\begin{itemize}
-    \item \textit{Nodes} (circles) represent clusters of similar coal plants, sized by the number of plants per cluster.
-    \item \textit{Edges} (lines) connect similar clusters based on multidimensional relationships in the data.
-    \item \textit{Groups} (connected nodes) make up connected components, or isolated sections of the graph. Here, we have focused on 3 of the 8 individual connected components that make up our graph of the entire US coal fleet.
-\end{itemize}
-}
 
 
 % \begin{figure}[H]
@@ -220,27 +172,27 @@ The resulting model has 12 unique groupings of coal plants. While our groupings 
 %     \label{fig:3}
 % \end{figure}
 
-\begin{figure}[H]
+% \begin{figure}[H]
 
-    \begin{minipage}{0.5\textwidth}
-        \includegraphics[width=\linewidth]{png_figs/shortest_path/group_1_vulnerability.png}  
-    \end{minipage}%
-    \begin{minipage}{0.5\textwidth}
-        \includegraphics[width=\linewidth]{png_figs/shortest_path/group_2_vulnerability.png}  
-    \end{minipage}
-    \begin{minipage}{0.5\textwidth}
-        \includegraphics[width=\linewidth]{png_figs/shortest_path/group_3_vulnerability.png}  
-    \end{minipage}%
-    \begin{minipage}{0.4\textwidth}
-        \raggedleft
-        \includesvg[inkscapelatex=false,width=1\linewidth]{svg_figs/vulnerability_barPolar.svg}
-    \end{minipage}
+%     \begin{minipage}{0.5\textwidth}
+%         \includegraphics[width=\linewidth]{png_figs/shortest_path/group_1_vulnerability.png}  
+%     \end{minipage}%
+%     \begin{minipage}{0.5\textwidth}
+%         \includegraphics[width=\linewidth]{png_figs/shortest_path/group_2_vulnerability.png}  
+%     \end{minipage}
+%     \begin{minipage}{0.5\textwidth}
+%         \includegraphics[width=\linewidth]{png_figs/shortest_path/group_3_vulnerability.png}  
+%     \end{minipage}%
+%     \begin{minipage}{0.4\textwidth}
+%         \raggedleft
+%         \includesvg[inkscapelatex=false,width=1\linewidth]{svg_figs/vulnerability_barPolar.svg}
+%     \end{minipage}
         
-    \caption{\textbf{Proximity To Retirement Graphs} Nodes representing coal plants with the highest percentage of retiring capacity per plant are identified as target nodes. The edges in the graph are weighted to indicate the relationships between nodes. Employing Dijkstra's algorithm, we determine the shortest path and corresponding distance from these target nodes to every other node in the graph.
-    % This is our approximation for a "coarse-grained" geodesic distance in high dimensional space
-    This distance signifies the level of similarity; nodes with shorter paths to target nodes share more similar attributes with the retiring nodes. Conversely, nodes with longer distances have more dissimilar characteristics, indicating a greater divergence between the plants contained within them and the attributes of the retiring plants within target nodes. \textit{explain edge weighting here as well?}}
-    \label{fig:3}
-\end{figure}
+%     \caption{\textbf{Proximity To Retirement Graphs} Nodes representing coal plants with the highest percentage of retiring capacity per plant are identified as target nodes. The edges in the graph are weighted to indicate the relationships between nodes. Employing Dijkstra's algorithm, we determine the shortest path and corresponding distance from these target nodes to every other node in the graph.
+%     % This is our approximation for a "coarse-grained" geodesic distance in high dimensional space
+%     This distance signifies the level of similarity; nodes with shorter paths to target nodes share more similar attributes with the retiring nodes. Conversely, nodes with longer distances have more dissimilar characteristics, indicating a greater divergence between the plants contained within them and the attributes of the retiring plants within target nodes. \textit{explain edge weighting here as well?}}
+%     \label{fig:3}
+% \end{figure}
 
 % \begin{figure}[H]
 %     \centering
@@ -260,10 +212,6 @@ The resulting model has 12 unique groupings of coal plants. While our groupings 
 %     \label{fig:3}
 % \end{figure}
 
-
-\section{Supplemental Info/Figs}
-
-
 % \begin{figure}
 %     \includesvg[inkscapelatex=false,width=1\columnwidth]{svg_figs/correlation_matrix.svg}
 %     \label{fig:s1}
@@ -271,4 +219,3 @@ The resulting model has 12 unique groupings of coal plants. While our groupings 
 % \end{figure}
 
 
-\end{document}

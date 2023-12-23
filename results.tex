@@ -1,0 +1,44 @@
+\section{Results}
+
+While the U.S. has seen a decline in coal electricity production over the past ten years, many studies indicate that coal power must be phased out entirely 
+by 2030-2035 if we are to meet environmental, social, political, financial, and energy delivery impacts. A graphical representation of coal plants encodes 
+multi-dimensional relationships of these factors, and when looking at distributions of these representations, we can extract relationships present in the original 
+column-space of the dataset. These local relationships can provide insights for choosing and evaluating phase-out strategy effectiveness and resource allocation. 
+More conventional metrics fall short in capturing the intricate relationships and nuances within this high-dimensional space.
+
+To account for the complexity of the coal phaseout problem, we construct a graph model of the US coal fleet, using over 70 variables in the raw column space 
+encompassing environmental, political, financial, and other variables. The graph and resulting groups arise from the structure of our high dimensional data set, 
+whose complex relationships are distilled into a more interpretable model. Unlike traditional clustering methods, we use the graph model’s structure to build 
+digestible descriptions of these groups. This allows us to illustrate which features connect the coal plants in each group, and compare group profiles across all 
+available data fields.
+
+\vspace{\baselineskip}
+
+\highlight{How to interpret the model below:
+\begin{itemize}
+    \item \textit{Nodes} (circles) represent clusters of similar coal plants.
+    \item \textit{Edges} (lines) connect similar clusters based on multidimensional relationships in the data.
+    \item \textit{Groups} (connected nodes) make up connected components, or isolated sections of the graph.
+\end{itemize}
+}
+
+%%%%%%
+% May need to add this into another doc to position properly
+%%%%%
+
+\begin{figure}[H]
+    \input{FIG-CoalFleetPartition}
+    \caption{\textbf{Classifying the US Coal Fleet} The resulting model has 8 unique groupings of coal plants. 
+    While our groupings are derived from every feature of the data set, looking at homogeneous data fields within 
+    each group gives a high-level and digestible overview of why certain plants are grouped together. Here, we label 
+    the groups based on some defining characteristics for increased interpretability.
+    The node coloring corresponds to the percent of coal plants within each node with plans to retire. 
+    Nodes with a higher percentage of retiring coal plants are assigned a darker red. The size of each node is 
+    proportional to the total amount of carbon dioxide (CO\textsubscript{2}) emissions in 2022 from the coal plants within the node (scaled). 
+    Larger nodes indicate a higher cumulative emission of CO\textsubscript{2} from the associated coal plants.}
+    \label{fig:coal-fleet-partition}
+\end{figure}
+
+\subsection{Understanding Tradeoffs}
+
+\subsubsection{Policy Efficacy and Optimizing Resource Allocation}
