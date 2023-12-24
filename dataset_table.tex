@@ -1,0 +1,203 @@
+\begin{table}[H]
+    \centering
+    \small
+    \begin{adjustbox}{width=\textwidth}
+      \begin{tabular}{|l | r | r |}
+        \toprule
+        \textbf{Variable} &  \textbf{Plants missing Data (count)} &  \textbf{Capacity (MW) Missing (\%)} \\
+    \midrule\midrule
+    2022 SO2 Emissions (tons)                          &                                  21 &                         4.77\% \\ \midrule
+    2021 vs 2022 SO2 Emissions (\%)                     &                                  21 &                         4.77\% \\ \midrule
+    2022 SO2 Emission Rate (lb/mmBtu)                  &                                  21 &                         4.77\% \\ \midrule
+    2022 NOX Emissions (tons)                          &                                  21 &                         4.77\% \\ \midrule
+    2022 NOX Emission Rate (lb/mmBtu)                  &                                  21 &                         4.77\% \\ \midrule
+    2022 CO2 Emissions (tons)                          &                                  22 &                         4.82\% \\ \midrule
+    2021 vs 2022 CO2 Emissions (\%)                     &                                  22 &                         4.82\% \\ \midrule
+    2022 CO2 Emission Rate (lb/mmBtu)                  &                                  22 &                         4.82\% \\ \midrule
+    2022 Hg Emissions (lbs)                            &                                  52 &                         11.49\% \\ \midrule
+    2022 Hg Emission Rate (lb/TBtu)                    &                                  52 &                         11.49\% \\ \midrule
+    Hospital Admits, All Respiratory                   &                                  16 &                         2.23\% \\ \midrule
+    Infant Mortality                                   &                                  16 &                         2.23\% \\ \midrule
+    Hospital Admits, Cardiovascular                     &                                  16 &                         2.23\% \\ \midrule
+    \$ Work Loss Days                                   &                                  16 &                         2.23\% \\ \midrule
+    \$ Mortality (low estimate)                         &                                  16 &                         2.23\% \\ \midrule
+    \$ Asthma Exacerbation                              &                                  16 &                         2.23\% \\ \midrule
+    PM 2.5 Emssions (tons)                             &                                   1 &                         0.46\% \\ \midrule
+    PM 2.5 Emission Rate (lb/MWh)                      &                                   1 &                         0.02\% \\ \midrule
+    2020 Net Cashflow                                  &                                  28 &                         5.69\% \\ \midrule
+    Average Cashflow                                   &                                  28 &                         5.69\% \\ \midrule
+    Forward Costs                                      &                                  15 &                         2.46\% \\ \midrule
+    Average PM Results (lb/mmBtu)                      &                                  45 &                         15.57\% \\ \midrule
+    Cheapest Renewable Resource                        &                                  15 &                         2.46\% \\ \midrule
+    Difference between cheapest renewables and coal... &                                  15 &                         2.46\% \\ \midrule
+    Ownership Type                                     &                                  52 &                         25.08\% \\ \bottomrule
+    \end{tabular}
+    \end{adjustbox}
+    \caption{Random-Sample Imputed Values Breakdown}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \small
+    \begin{adjustbox}{width=\textwidth}
+      \begin{tabular}{|l | l | l |}
+        \toprule
+        \textbf{Variable} & \textbf{Source} & \textbf{Used in Graph Construction} \\
+        \midrule\midrule
+        EIA Plant Code & EIA eGrid Dataset - 2021 & \\
+        \midrule
+        Plant Name & EIA eGrid Dataset - 2021 & \\
+        \midrule
+        Retirement Date & Sierra Club Retired and Announced Coal & \\
+        \midrule
+        EIA Utility Code & EIA eGrid Dataset - 2021 & \\
+        \midrule
+        Retirement Status & Sierra Club Retired and Announced Coal & \textbf{X} \\
+        \midrule
+        Date of Last Unit or Planned Retirement & Sierra Club Retired and Announced Coal & \\
+        \midrule
+        Total Nameplate Capacity (MW) & EIA eGrid Dataset - 2021 & \textbf{X} \\
+        \midrule
+        Retiring Capacity & EIA eGrid Dataset - 2021 \& Sierra Club Retired and Announced Coal & \textbf{X} \\
+        \midrule
+        Average Capacity Factor & EIA eGrid Dataset - 2021 & \textbf{X} \\
+        \midrule
+        Generator Size Weighted Capacity Factor (\%) & EIA eGrid Dataset - 2021 & \textbf{X} \\
+        \midrule
+        Age & EIA eGrid Dataset - 2021 & \textbf{X} \\
+        \midrule
+        Generator Size Weighted Age & EIA eGrid Dataset - 2021 & \textbf{X} \\
+        \midrule
+        Summed Generator annual net generation (MWh) & EIA eGrid Dataset - 2021 & \textbf{X} \\
+        \midrule
+        Age at Retirement & Sierra Club Retired and Announced Coal & \\
+        \midrule
+        Percent Capacity Retiring & EIA eGrid Dataset - 2021 \& Sierra Club Retired and Announced Coal & \textbf{X} \\
+        \midrule
+        State & EIA eGrid Dataset - 2021 & \\
+        \midrule
+        2022 SO2 Emissions (tons) & EPA's Clean Air Markets Division 2021 and 2022 Annual Power Plant Emissions & \textbf{X} \\
+        \midrule
+        2021 vs 2022 SO2 Emissions (\%) & EPA's Clean Air Markets Division 2021 and 2022 Annual Power Plant Emissions & \textbf{X} \\
+        \midrule
+        2022 SO2 Emission Rate (lb/mmBtu) & EPA's Clean Air Markets Division 2021 and 2022 Annual Power Plant Emissions & \textbf{X} \\
+        \midrule
+        2022 NOX Emissions (tons) & EPA's Clean Air Markets Division 2021 and 2022 Annual Power Plant Emissions & \textbf{X} \\
+        \midrule
+        2022 NOX Emission Rate (lb/mmBtu) & EPA's Clean Air Markets Division 2021 and 2022 Annual Power Plant Emissions & \textbf{X} \\
+        \midrule
+        2022 CO2 Emissions (tons) & EPA's Clean Air Markets Division 2021 and 2022 Annual Power Plant Emissions & \textbf{X} \\
+        \midrule
+        2021 vs 2022 CO2 Emissions (\%) & EPA's Clean Air Markets Division 2021 and 2022 Annual Power Plant Emissions & \textbf{X} \\
+        \midrule
+        2022 CO2 Emission Rate (lb/mmBtu) & EPA's Clean Air Markets Division 2021 and 2022 Annual Power Plant Emissions & \textbf{X} \\
+        \midrule
+        2022 Hg Emissions (lbs) & EPA's Clean Air Markets Division 2021 and 2022 Annual Power Plant Emissions & \textbf{X} \\
+        \midrule
+        2022 Hg Emission Rate (lb/TBtu) & EPA's Clean Air Markets Division 2021 and 2022 Annual Power Plant Emissions & \textbf{X} \\
+        \midrule
+        Facility has one or more low-emitting EGUs (LEE) units that do not report hourly emissions & EPA MATS Data Consolidated - 2021 & \textbf{X} \\
+        \midrule
+        eGRID subregion name & EIA eGrid Dataset - 2021 & \\
+        \midrule
+        eGRID subregion coal generation percent (resource mix) & EIA eGrid Dataset - 2021 & \textbf{X} \\
+        \midrule
+        eGRID subregion gas generation percent (resource mix) & EIA eGrid Dataset - 2021 & \textbf{X} \\
+        \midrule
+        eGRID subregion wind generation percent (resource mix) & EIA eGrid Dataset - 2021 & \textbf{X} \\
+        \midrule
+        eGRID subregion solar generation percent (resource mix) & EIA eGrid Dataset - 2021 & \textbf{X} \\
+        \midrule
+        Hospital Admits, All Respiratory & Coal Plant Health Impacts 2019 - COBRA Pollution Transport Model Results, Provided by the Sierra Club & \textbf{X} \\
+        \midrule
+        Infant Mortality & Coal Plant Health Impacts 2019 - COBRA Pollution Transport Model Results, Provided by the Sierra Club & \textbf{X} \\
+        \midrule
+        Hospital Admits, Cardiovascular (except heart attacks) & Coal Plant Health Impacts 2019 - COBRA Pollution Transport Model Results, Provided by the Sierra Club & \textbf{X} \\
+        \midrule
+        \$ Work Loss Days & Coal Plant Health Impacts 2019 - COBRA Pollution Transport Model Results, Provided by the Sierra Club & \textbf{X} \\
+        \midrule
+        \$ Mortality (low estimate) & Coal Plant Health Impacts 2019 - COBRA Pollution Transport Model Results, Provided by the Sierra Club & \textbf{X} \\
+        \midrule
+        \$ Asthma Exacerbation & Coal Plant Health Impacts 2019 - COBRA Pollution Transport Model Results, Provided by the Sierra Club & \textbf{X} \\
+        \midrule
+        total population (ACS2018) & EPA Power Plants and Neighboring Communities & \textbf{X} \\
+        \midrule
+        National percentile for Demographic Index & EPA Power Plants and Neighboring Communities & \textbf{X} \\
+        \midrule
+        National percentile for People of Color Population & EPA Power Plants and Neighboring Communities & \textbf{X} \\
+        \midrule
+        National percentile for Low Income Population & EPA Power Plants and Neighboring Communities & \textbf{X} \\
+        \midrule
+        National percentile for Population with Less Than High School Education & EPA Power Plants and Neighboring Communities & \textbf{X} \\
+        \midrule
+        PM 2.5 Emissions (tons) & EPA's Clean Air Markets Division 2021 and 2022 Annual Power Plant Emissions & \textbf{X} \\
+        \midrule
+        PM 2.5 Emission Rate (lb/MWh) & EPA's Clean Air Markets Division 2021 and 2022 Annual Power Plant Emissions & \textbf{X} \\
+        \midrule
+        Average PM Results (lb/mmBtu) & EPA MATS Data Consolidated - 2021 & \textbf{X} \\
+        \midrule
+        Mapped Fuel Type & EPA Power Plants and Neighboring Communities & \textbf{X} \\
+        \midrule
+        Coal Fuels & EIA eGrid Dataset - 2021 & \textbf{X} \\
+        \midrule
+        Number of Coal Generators & EIA eGrid Dataset - 2021 & \textbf{X} \\
+        \midrule
+        Non-Coal FUELS & EIA eGrid Dataset - 2021 & \textbf{X} \\
+        \midrule
+        Total Cost of Emissions Control Equipment Retrofits Installed since 2012 (\$) & EIA Form 860 Dataset & \textbf{X} \\
+        \midrule
+        Plant Coal Percentage (\%) & EIA eGrid Dataset - 2021 & \textbf{X} \\
+        \midrule
+        2020 Net Cashflow & RMI Uneconomic Dispatch Dataset & \textbf{X} \\
+        \midrule
+        Average Cashflow (since 2012) & RMI Uneconomic Dispatch Dataset & \textbf{X} \\
+        \midrule
+        Forward Costs & Energy Innovation Coal Cost Crossover 3.0 Dataset & \textbf{X} \\
+        \midrule
+        Coal Debt Securitization Policy & RMI State Utility Policies Data & \textbf{X} \\
+        \midrule
+        State coal generation percent (resource mix) & EIA eGrid Dataset - 2021 & \textbf{X} \\
+        \midrule
+        State gas generation percent (resource mix) & EIA eGrid Dataset - 2021 & \textbf{X} \\
+        \midrule
+        LAT & EIA eGrid Dataset - 2021 & \textbf{X} \\
+        \midrule
+        LON & EIA eGrid Dataset - 2021 & \textbf{X} \\
+        \midrule
+        Governor Party & RMI State Utility Policies & \textbf{X} \\
+        \midrule
+        Legislation Majority Party & RMI State Utility Policies & \textbf{X} \\
+        \midrule
+        Estimated percentage who somewhat/strongly oppose setting strict limits on existing coal-fire power plants & Yale Climate Opinion Map Aggregated Dataset - 2008-2021 & \textbf{X} \\
+        \midrule
+        Change from 2018 to 2021 in the estimated percentage who somewhat/strongly oppose setting strict limits on existing coal-fire power plants & Yale Climate Opinion Map Aggregated Dataset - 2008-2021 & \textbf{X} \\
+        \midrule
+        Cheapest Renewable Resource & Energy Innovation Coal Cost Crossover 3.0 Dataset & \textbf{X} \\
+        \midrule
+        Difference between cheapest renewables and coal (\$/MWh) & Energy Innovation Coal Cost Crossover 3.0 Dataset & \textbf{X} \\
+        \midrule
+        Renewables or Coal & Energy Innovation Coal Cost Crossover 3.0 Dataset & \\
+        \midrule
+        Percent difference & Energy Innovation Coal Cost Crossover 3.0 Dataset & \\
+        \midrule
+        Sector & EIA eGrid Dataset - 2021 & \\
+        \midrule
+        Utility Name & EIA eGrid Dataset - 2021 & \ \\
+        \midrule
+        Ownership Type & RMI Coal Asset Valuation Tool \& SEPA Utility Carbon-Reduction Tracker Dataset & \textbf{X} \\
+        \midrule
+        Final Target Summary & SEPA Utility Carbon-Reduction Tracker & \\
+        \midrule
+        Attainment Year & SEPA Utility Carbon-Reduction Tracker & \\
+        \midrule
+        Interim Target(s) Summary & SEPA Utility Carbon-Reduction Tracker & \\
+        \midrule
+        Mandatory or Voluntary Target & SEPA Utility Carbon-Reduction Tracker & \\
+        \midrule
+        Target Scope & SEPA Utility Carbon-Reduction Tracker & \\
+        \bottomrule
+      \end{tabular}
+    \end{adjustbox}
+    \caption{Dataset \& Data Sources Breakdown}
+  \end{table}
+
