@@ -4,37 +4,38 @@
     \begin{adjustbox}{width=\textwidth}
       \begin{tabular}{|l | r | r |}
         \toprule
-        \textbf{Variable} &  \textbf{Plants missing Data (count)} &  \textbf{Capacity (MW) Missing (\%)} \\
-    \midrule\midrule
-    2022 SO2 Emissions (tons)                          &                                  21 &                         4.77\% \\ \midrule
-    2021 vs 2022 SO2 Emissions (\%)                     &                                  21 &                         4.77\% \\ \midrule
-    2022 SO2 Emission Rate (lb/mmBtu)                  &                                  21 &                         4.77\% \\ \midrule
-    2022 NOX Emissions (tons)                          &                                  21 &                         4.77\% \\ \midrule
-    2022 NOX Emission Rate (lb/mmBtu)                  &                                  21 &                         4.77\% \\ \midrule
-    2022 CO2 Emissions (tons)                          &                                  22 &                         4.82\% \\ \midrule
-    2021 vs 2022 CO2 Emissions (\%)                     &                                  22 &                         4.82\% \\ \midrule
-    2022 CO2 Emission Rate (lb/mmBtu)                  &                                  22 &                         4.82\% \\ \midrule
-    2022 Hg Emissions (lbs)                            &                                  52 &                         11.49\% \\ \midrule
-    2022 Hg Emission Rate (lb/TBtu)                    &                                  52 &                         11.49\% \\ \midrule
-    Hospital Admits, All Respiratory                   &                                  16 &                         2.23\% \\ \midrule
-    Infant Mortality                                   &                                  16 &                         2.23\% \\ \midrule
-    Hospital Admits, Cardiovascular                     &                                  16 &                         2.23\% \\ \midrule
-    \$ Work Loss Days                                   &                                  16 &                         2.23\% \\ \midrule
-    \$ Mortality (low estimate)                         &                                  16 &                         2.23\% \\ \midrule
-    \$ Asthma Exacerbation                              &                                  16 &                         2.23\% \\ \midrule
-    PM 2.5 Emssions (tons)                             &                                   1 &                         0.46\% \\ \midrule
-    PM 2.5 Emission Rate (lb/MWh)                      &                                   1 &                         0.02\% \\ \midrule
-    2020 Net Cashflow                                  &                                  28 &                         5.69\% \\ \midrule
-    Average Cashflow                                   &                                  28 &                         5.69\% \\ \midrule
-    Forward Costs                                      &                                  15 &                         2.46\% \\ \midrule
-    Average PM Results (lb/mmBtu)                      &                                  45 &                         15.57\% \\ \midrule
-    Cheapest Renewable Resource                        &                                  15 &                         2.46\% \\ \midrule
-    Difference between cheapest renewables and coal... &                                  15 &                         2.46\% \\ \midrule
-    Ownership Type                                     &                                  52 &                         25.08\% \\ \bottomrule
-    \end{tabular}
+        \textbf{Variable} &  \textbf{Plants Missing Data (count)} &  \textbf{Capacity (MW) Missing (\%)} \\
+        \midrule\midrule
+        2022 SO2 Emissions (tons)                          &              21 &            4.77\% \\ \midrule
+        2021 vs 2022 SO2 Emissions (\%)                     &              21 &            4.77\% \\ \midrule
+        2022 SO2 Emission Rate (lb/mmBtu)                  &              21 &            4.77\% \\ \midrule
+        2022 NOX Emissions (tons)                          &              21 &            4.77\% \\ \midrule
+        2022 NOX Emission Rate (lb/mmBtu)                  &              21 &            4.77\% \\ \midrule
+        2022 CO2 Emissions (tons)                          &              22 &            4.82\% \\ \midrule
+        2021 vs 2022 CO2 Emissions (\%)                     &              22 &            4.82\% \\ \midrule
+        2022 CO2 Emission Rate (lb/mmBtu)                  &              22 &            4.82\% \\ \midrule
+        2022 Hg Emissions (lbs)                            &              52 &            11.49\% \\ \midrule
+        2022 Hg Emission Rate (lb/TBtu)                    &              52 &            11.49\% \\ \midrule
+        Hospital Admits, All Respiratory                   &              16 &            2.23\% \\ \midrule
+        Infant Mortality                                   &              16 &            2.23\% \\ \midrule
+        Hospital Admits, Cardiovascular                     &              16 &            2.23\% \\ \midrule
+        \$ Work Loss Days                                   &              16 &            2.23\% \\ \midrule
+        \$ Mortality (low estimate)                         &              16 &            2.23\% \\ \midrule
+        \$ Asthma Exacerbation                              &              16 &            2.23\% \\ \midrule
+        PM 2.5 Emssions (tons)                             &               1 &            0.46\% \\ \midrule
+        PM 2.5 Emission Rate (lb/MWh)                      &               1 &            0.02\% \\ \midrule
+        Average PM Results (lb/mmBtu)                      &              45 &            15.57\% \\ \midrule
+        2020 Net Cashflow                                  &              28 &            5.69\% \\ \midrule
+        Average Cashflow                                   &              28 &            5.69\% \\ \midrule
+        Forward Costs                                      &              15 &            2.46\% \\ \midrule
+        Cheapest Renewable Resource                        &              15 &            2.46\% \\ \midrule
+        Difference between cheapest renewables and coal... &              15 &            2.46\% \\ \midrule
+        Ownership Type                                     &              52 &            25.08\% \\ \bottomrule
+        \end{tabular}
     \end{adjustbox}
     \caption{Random-Sample Imputed Values Breakdown}
 \end{table}
+
 
 \begin{table}[H]
     \centering
@@ -122,13 +123,13 @@
         \midrule
         total population (ACS2018) & EPA Power Plants and Neighboring Communities & \textbf{X} \\
         \midrule
-        National percentile for Demographic Index & EPA Power Plants and Neighboring Communities & \textbf{X} \\
+        National percentile for Demographic Index (within 3 miles of plant) & EPA Power Plants and Neighboring Communities & \textbf{X} \\
         \midrule
-        National percentile for People of Color Population & EPA Power Plants and Neighboring Communities & \textbf{X} \\
+        National percentile for People of Color Population (within 3 miles of plant) & EPA Power Plants and Neighboring Communities & \textbf{X} \\
         \midrule
-        National percentile for Low Income Population & EPA Power Plants and Neighboring Communities & \textbf{X} \\
+        National percentile for Low Income Population (within 3 miles of plant) & EPA Power Plants and Neighboring Communities & \textbf{X} \\
         \midrule
-        National percentile for Population with Less Than High School Education & EPA Power Plants and Neighboring Communities & \textbf{X} \\
+        National percentile for Population with Less Than High School Education (within 3 miles of plant) & EPA Power Plants and Neighboring Communities & \textbf{X} \\
         \midrule
         PM 2.5 Emissions (tons) & EPA's Clean Air Markets Division 2021 and 2022 Annual Power Plant Emissions & \textbf{X} \\
         \midrule
@@ -200,4 +201,43 @@
     \end{adjustbox}
     \caption{Dataset \& Data Sources Breakdown}
   \end{table}
+
+
+  \begin{table}[H]
+    \centering
+    \small
+    \begin{adjustbox}{width=\textwidth}
+      \begin{tabular}{|l | l | l |}
+        \toprule
+        \textbf{Variable} & \textbf{Aggregation Method} & \textbf{Comments} \\
+        \midrule\midrule
+        Retirement Date & First occurrence (earliest retirement date) & 11.1\% of plants (23.2\% of plants with retirement plans) only have partial retirement plans, reflected in the row below \\
+        \midrule
+        Date of Last Unit or Planned Retirement & Maximum value (latest retirement date) & \\
+        \midrule
+        Retirement Status & Maximum value & 0: No Retirement Plans, 1: Planned Partial Retirement (e.x. 2 of 3 coal generators retiring), 2: Full Retirement Planned \\
+        \midrule
+        Total Nameplate Capacity (MW) & Sum of nameplate capacities of all coal generators at plant & \\
+        \midrule
+        Retiring Capacity & Sum of generator retiring capacities (MW) & \\
+        \midrule
+        Capacity Factor & Mean (average) capacity factor across generators & \\
+        \midrule
+        Generator Size Weighted Capacity Factor (\%)  & Capacity-weighted average capacity factor & \\
+        \midrule
+        Age & Mean (average) age & \\
+        \midrule
+        Generator Size Weighted Age & Capacity-weighted average age & \\
+        \midrule
+        Summed Generator annual net generation (MWh) & Sum of generator annual net generation & \\
+        \midrule
+        Age at Retirement & Maximum age at retirement (oldest unit retiring) & \\
+        \midrule
+        Percent Capacity Retiring & Percentage of plant coal capacity retiring & $\textnormal{Sum of retiring coal generators at plant (MW)} \div \textnormal{Sum of all coal generators at plant (MW)}$\\
+
+        \bottomrule
+    \end{tabular}
+    \end{adjustbox}
+    \caption{Aggregation of Generator-Level Variables for Plant-Level Dataset}
+\end{table}
 
