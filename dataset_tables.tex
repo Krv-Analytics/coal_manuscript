@@ -1,41 +1,6 @@
-\begin{table}[H]
-    \centering
-    \small
-    \begin{adjustbox}{width=\textwidth}
-      \begin{tabular}{|l | r | r |}
-        \toprule
-        \textbf{Variable} &  \textbf{Plants Missing Data (count)} &  \textbf{Capacity (MW) Missing (\%)} \\
-        \midrule\midrule
-        2022 SO2 Emissions (tons)                          &              21 &            4.77\% \\ \midrule
-        2021 vs 2022 SO2 Emissions (\%)                     &              21 &            4.77\% \\ \midrule
-        2022 SO2 Emission Rate (lb/mmBtu)                  &              21 &            4.77\% \\ \midrule
-        2022 NOX Emissions (tons)                          &              21 &            4.77\% \\ \midrule
-        2022 NOX Emission Rate (lb/mmBtu)                  &              21 &            4.77\% \\ \midrule
-        2022 CO2 Emissions (tons)                          &              22 &            4.82\% \\ \midrule
-        2021 vs 2022 CO2 Emissions (\%)                     &              22 &            4.82\% \\ \midrule
-        2022 CO2 Emission Rate (lb/mmBtu)                  &              22 &            4.82\% \\ \midrule
-        2022 Hg Emissions (lbs)                            &              52 &            11.49\% \\ \midrule
-        2022 Hg Emission Rate (lb/TBtu)                    &              52 &            11.49\% \\ \midrule
-        Hospital Admits, All Respiratory                   &              16 &            2.23\% \\ \midrule
-        Infant Mortality                                   &              16 &            2.23\% \\ \midrule
-        Hospital Admits, Cardiovascular                     &              16 &            2.23\% \\ \midrule
-        \$ Work Loss Days                                   &              16 &            2.23\% \\ \midrule
-        \$ Mortality (low estimate)                         &              16 &            2.23\% \\ \midrule
-        \$ Asthma Exacerbation                              &              16 &            2.23\% \\ \midrule
-        PM 2.5 Emssions (tons)                             &               1 &            0.46\% \\ \midrule
-        PM 2.5 Emission Rate (lb/MWh)                      &               1 &            0.02\% \\ \midrule
-        Average PM Results (lb/mmBtu)                      &              45 &            15.57\% \\ \midrule
-        2020 Net Cashflow                                  &              28 &            5.69\% \\ \midrule
-        Average Cashflow                                   &              28 &            5.69\% \\ \midrule
-        Forward Costs                                      &              15 &            2.46\% \\ \midrule
-        Cheapest Renewable Resource                        &              15 &            2.46\% \\ \midrule
-        Difference between cheapest renewables and coal... &              15 &            2.46\% \\ \midrule
-        Ownership Type                                     &              52 &            25.08\% \\ \bottomrule
-        \end{tabular}
-    \end{adjustbox}
-    \caption{Random-Sample Imputed Values Breakdown}
-\end{table}
-
+%  ╭──────────────────────────────────────────────────────────╮
+%  │ Variables                                                |
+%  ╰──────────────────────────────────────────────────────────╯
 
 \begin{table}[H]
     \centering
@@ -203,6 +168,11 @@
   \end{table}
 
 
+
+%  ╭──────────────────────────────────────────────────────────╮
+%  │ Generator data agg                                       |
+%  ╰──────────────────────────────────────────────────────────╯
+
   \begin{table}[H]
     \centering
     \small
@@ -241,3 +211,46 @@
     \caption{Aggregation of Generator-Level Variables for Plant-Level Dataset}
 \end{table}
 
+
+
+%  ╭──────────────────────────────────────────────────────────╮
+%  │ Impute data                                              |
+%  ╰──────────────────────────────────────────────────────────╯
+
+\begin{table}[H]
+  \centering
+  \small
+  \begin{adjustbox}{width=\textwidth}
+    \begin{tabular}{|l | r | r |}
+      \toprule
+      \textbf{Variable} &  \textbf{Plants Missing Data (count)} &  \textbf{Capacity (MW) Missing (\%)} \\
+      \midrule\midrule
+      2022 SO2 Emissions (tons)                          &              21 &            4.77\% \\ \midrule
+      2021 vs 2022 SO2 Emissions (\%)                     &              21 &            4.77\% \\ \midrule
+      2022 SO2 Emission Rate (lb/mmBtu)                  &              21 &            4.77\% \\ \midrule
+      2022 NOX Emissions (tons)                          &              21 &            4.77\% \\ \midrule
+      2022 NOX Emission Rate (lb/mmBtu)                  &              21 &            4.77\% \\ \midrule
+      2022 CO2 Emissions (tons)                          &              22 &            4.82\% \\ \midrule
+      2021 vs 2022 CO2 Emissions (\%)                     &              22 &            4.82\% \\ \midrule
+      2022 CO2 Emission Rate (lb/mmBtu)                  &              22 &            4.82\% \\ \midrule
+      2022 Hg Emissions (lbs)                            &              52 &            11.49\% \\ \midrule
+      2022 Hg Emission Rate (lb/TBtu)                    &              52 &            11.49\% \\ \midrule
+      Hospital Admits, All Respiratory                   &              16 &            2.23\% \\ \midrule
+      Infant Mortality                                   &              16 &            2.23\% \\ \midrule
+      Hospital Admits, Cardiovascular                     &              16 &            2.23\% \\ \midrule
+      \$ Work Loss Days                                   &              16 &            2.23\% \\ \midrule
+      \$ Mortality (low estimate)                         &              16 &            2.23\% \\ \midrule
+      \$ Asthma Exacerbation                              &              16 &            2.23\% \\ \midrule
+      PM 2.5 Emssions (tons)                             &               1 &            0.46\% \\ \midrule
+      PM 2.5 Emission Rate (lb/MWh)                      &               1 &            0.02\% \\ \midrule
+      Average PM Results (lb/mmBtu)                      &              45 &            15.57\% \\ \midrule
+      2020 Net Cashflow                                  &              28 &            5.69\% \\ \midrule
+      Average Cashflow                                   &              28 &            5.69\% \\ \midrule
+      Forward Costs                                      &              15 &            2.46\% \\ \midrule
+      Cheapest Renewable Resource                        &              15 &            2.46\% \\ \midrule
+      Difference between cheapest renewables and coal... &              15 &            2.46\% \\ \midrule
+      Ownership Type                                     &              52 &            25.08\% \\ \bottomrule
+      \end{tabular}
+  \end{adjustbox}
+  \caption{Random-Sample Imputed Values Breakdown}
+\end{table}

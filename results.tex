@@ -24,23 +24,46 @@ available data fields.
 \end{itemize}
 }
 
-%%%%%%
-% May need to add this into another doc to position properly
-%%%%%
-
+%  ╭──────────────────────────────────────────────────────────╮
+%  │ Coal Fleet Partition Fig                                 |
+%  ╰──────────────────────────────────────────────────────────╯
 \begin{figure}[H]
     \input{FIG-CoalFleetPartition}
-    \caption{\textbf{Classifying the US Coal Fleet} The resulting model has 8 unique groupings of coal plants. 
-    While our groupings are derived from every feature of the data set, looking at homogeneous data fields within 
-    each group gives a high-level and digestible overview of why certain plants are grouped together. Here, we label 
-    the groups based on some defining characteristics for increased interpretability.
-    The node coloring corresponds to the percent of coal plants within each node with plans to retire. 
-    Nodes with a higher percentage of retiring coal plants are assigned a darker red. The size of each node is 
-    proportional to the total amount of carbon dioxide (CO\textsubscript{2}) emissions in 2022 from the coal plants within the node (scaled). 
-    Larger nodes indicate a higher cumulative emission of CO\textsubscript{2} from the associated coal plants.}
+    \caption{\textbf{Classifying the US Coal Fleet}}
+    \medskip
+    \footnotesize
+    The resulting model has 8 unique groupings of coal plants. While our groupings are derived from every feature of the data set, looking at homogeneous data fields within each group gives a high-level and digestible overview of why certain plants are grouped together. Here, we label the groups based on some defining characteristics for increased interpretability.
+    The node coloring corresponds to the percent of coal plants within each node with plans to retire. Nodes with a higher percentage of retiring coal plants are assigned a darker red. The size of each node is proportional to the total amount of carbon dioxide (CO\textsubscript{2}) emissions in 2022 from the coal plants within the node (scaled). 
+    Larger nodes indicate a higher cumulative emission of CO\textsubscript{2} from the associated coal plants.
     \label{fig:coal-fleet-partition}
 \end{figure}
+
+
 
 \subsection{Understanding Tradeoffs}
 
 \subsubsection{Policy Efficacy and Optimizing Resource Allocation}
+
+
+
+%  ╭──────────────────────────────────────────────────────────╮
+%  │ Shortest Path Graphs Fig                                 |
+%  ╰──────────────────────────────────────────────────────────╯
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.5\textwidth}
+        \includesvg[inkscapelatex=false,width=\linewidth]{svg_figs/group3_path.svg}  
+        \subcaption{\textbf{Group 3:} Distance from Sink Nodes}
+    \end{minipage}%
+    \begin{minipage}{0.5\textwidth}
+        \includesvg[inkscapelatex=false,width=\linewidth]{svg_figs/group4_path.svg}  
+        \subcaption{\textbf{Group 4:} Distance from Sink Nodes}
+    \end{minipage}
+
+    \caption{\textbf{Proximity To Retirement}}
+    \medskip
+    \footnotesize
+    Employing Dijkstra's algorithm, we determine the shortest path and corresponding distance from these target nodes to every other node in the graph. This distance signifies the level of similarity; nodes with shorter paths to target nodes share more similar attributes with the retiring nodes. Conversely, nodes with longer distances have more dissimilar characteristics, indicating a greater divergence between the plants contained within them and the attributes of the retiring plants within target nodes.  This is our approximation for a \textit{coarse-grained} geodesic distance in high dimensional space. \textit{explain edge weighting here as well?}
+    Nodes where all plants are planned for full retirement (100\% of plants within) are marked as target nodes. These nodes are colored blue and labeled with an \textbf{S}. The edges in the graph are weighted to indicate the relationships between nodes. Nodes are sized according to the number of plants in each. 
+    \label{fig:shortest-path-graphs}
+\end{figure}
