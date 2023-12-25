@@ -1,4 +1,5 @@
 % !TEX program = pdflatex
+% pdflatex -shell-escape main.tex
 
 \documentclass{article}
 \usepackage{svg}
@@ -101,14 +102,14 @@
 
 \input{intro}
 
-\input{motivating_methodology.tex}
+\input{motivating_methodology}
 
 
 %  ╭──────────────────────────────────────────────────────────╮
 %  │ Results                                                  |
 %  ╰──────────────────────────────────────────────────────────╯
 
-\input{results.tex}
+\input{results}
 
 
 %  ╭──────────────────────────────────────────────────────────╮
@@ -126,7 +127,9 @@
 %  ╰──────────────────────────────────────────────────────────╯
 
 \section{Supplemental Info/Figs}
-\input{dataset_tables.tex}
+\input{dataset_tables}
+
+\input{FIG-MLscoring.tex}
 
 \end{document}
 
@@ -137,9 +140,10 @@
 
 
 
-%%%%%%%%%%%
-% Group Map Locations
-%%%%%%%%%%%
+%  ╭──────────────────────────────────────────────────────────╮
+%  │ EXTRAs - will be moved/deleted                           |
+%  ╰──────────────────────────────────────────────────────────╯
+
 
 % \begin{figure}[H]
 %     \includesvg[inkscapelatex=false,width=1\columnwidth]{svg_figs/group_map.svg}
@@ -147,10 +151,6 @@
 %     \caption{\textbf{Plant Group Locations} Illustrates the locations of the plants in every group.}
 % \end{figure}
 
-
-%  ╭──────────────────────────────────────────────────────────╮
-%  │ EXTRAs - will be moved/deleted                           |
-%  ╰──────────────────────────────────────────────────────────╯
 
 
 % \begin{figure}[H]

@@ -1,0 +1,37 @@
+\begin{figure}[h!]
+    \centering
+    \includesvg[inkscapelatex=false,width=\linewidth]{svg_figs/ml_featureImportance_accuracy.svg}  
+    \caption{\textbf{Variable Importances in Predicting Planned Retirements}}
+    \medskip
+    \footnotesize
+    \highlight{
+        Notably, different machine learning methods identify distinct features as highly influential. These divergent results emphasize the challenge of identifying consistent influential features across models, indicative of complexities in our dataset and motivating the need for novel analytical techniques.
+    }
+
+    \smallskip  % Added line skip here
+
+    Each bar represents the importance of a feature in predicting the target variable. Features with an importance of 1 are deemed to provide significant information and contribute substantially to explaining the variance in the target variable. When multiple features have high importances (such as \textit{Total Nameplate Capacity (MW), Age} and \textit{2022 Hg Emission Rate} do in Gradient Boosting), their cumulative effect on the model's predictions is substantial; the model relies heavily on the information provided by these features.
+    The many other moderately important features (importances 0.1-0.5) contribute, but to a lesser extent. The hierarchy of importance highlights the dominance of the feature with importance 1. 
+
+    \label{fig:ML-featureImportance}
+\end{figure}
+
+
+\begin{figure}[h!]
+    \centering
+    \includesvg[inkscapelatex=false,width=\linewidth]{svg_figs/ml_prediction_accuracy.svg}  
+    \caption{\textbf{Predicting Planned Retirements} with Supervised Learning}
+    \medskip
+    \footnotesize
+    \highlight{
+        Most notably, none of these models can accurately predict planned retirement in our coal plant dataset (averaging an F1-Score above 80\%). The size of our dataset (and size of the coal fleet), as well as the inherent unpredictability of external influences and the dynamic nature of the energy sector, most likely contribute to the observed model performance. 
+    }
+
+    \smallskip  % Added line skip here
+    
+    We use multiple supervised machine learning methods (Deciscion Tree, Extra Trees, Gradient Boosting, Random Forest) and evaluation metrics (Train-Test Split, Cross Validation) to predict coal plant retirements and evaluate prediction accuracy.
+    While a Train-Test Split produces  better results, we see the evaluation is quite sensitive to how the dataset is split, especially because our coal dataset is small. Additionally, Train-Test Split only uses a portion of the data only for training and another portion only for testing, so is prone to overfitting.
+    Cross Validation provides a more robust estimate of model performance by using multiple splits, as well as utilizing the entire dataset for both training and testing. We have shown both methods here as they each have their advantages and drawbacks, and both represent industry-standard methods for evaluating supervised machine learning results.
+    \label{fig:ML-Predictions}
+\end{figure}
+

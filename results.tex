@@ -23,6 +23,9 @@ available data fields.
     \item \textit{Groups} (connected nodes) make up connected components, or isolated sections of the graph.
 \end{itemize}
 }
+%%%%%%%%%%%
+
+
 
 %  ╭──────────────────────────────────────────────────────────╮
 %  │ Coal Fleet Partition Fig                                 |
@@ -37,10 +40,21 @@ available data fields.
     Larger nodes indicate a higher cumulative emission of CO\textsubscript{2} from the associated coal plants.
     \label{fig:coal-fleet-partition}
 \end{figure}
+%%%%%%%%%%%
 
 
 
 \subsection{Understanding Tradeoffs}
+
+\begin{figure}[H]
+    \includesvg[inkscapelatex=false,width=\linewidth]{svg_figs/heatmap_small.svg}  
+    \caption{\textbf{Plant Groups Comparison}}
+    \medskip
+    \footnotesize
+    The heatmap illustrates the landscape of our coal plant groupings, delineating both the similarities and differences between groups. This helps to provide insights into potential barriers and incentives influencing retirement dynamics within each group.
+    A subset of variables was chosen to aid in interpretability and readability, see \textit{Link to SIs} for full heatmap on all variables.
+    \label{fig:heatmap}
+\end{figure}
 
 \subsubsection{Policy Efficacy and Optimizing Resource Allocation}
 
@@ -53,17 +67,56 @@ available data fields.
     \centering
     \begin{minipage}{0.5\textwidth}
         \includesvg[inkscapelatex=false,width=\linewidth]{svg_figs/group3_path.svg}  
-        \subcaption{\textbf{Group 3:} Distance from Sink Nodes}
+        \subcaption{\textbf{Group 3} - Distance to Sink Nodes}
     \end{minipage}%
     \begin{minipage}{0.5\textwidth}
         \includesvg[inkscapelatex=false,width=\linewidth]{svg_figs/group4_path.svg}  
-        \subcaption{\textbf{Group 4:} Distance from Sink Nodes}
+        \subcaption{\textbf{Group 4} - Distance to Sink Nodes}
+    \end{minipage}
+
+    \begin{minipage}{0.25\textwidth}
+        \includesvg[inkscapelatex=false,width=\linewidth]{svg_figs/group3_averageCashflow.svg}  
+        \subcaption{Average Cashflows}
+    \end{minipage}%
+    \begin{minipage}{0.25\textwidth}
+        \includesvg[inkscapelatex=false,width=\linewidth]{svg_figs/group3_PM2.5.svg}  
+        \subcaption{PM 2.5 Emissions}
+    \end{minipage}%
+    \begin{minipage}{0.25\textwidth}
+        \includesvg[inkscapelatex=false,width=\linewidth]{svg_figs/group4_ownership.svg}  
+        \subcaption{Municipal Ownership}
+    \end{minipage}%
+    \begin{minipage}{0.25\textwidth}
+        \includesvg[inkscapelatex=false,width=\linewidth]{svg_figs/group4_proCoal.svg}  
+        \subcaption{Oppose Regulating Coal}
     \end{minipage}
 
     \caption{\textbf{Proximity To Retirement}}
     \medskip
     \footnotesize
-    Employing Dijkstra's algorithm, we determine the shortest path and corresponding distance from these target nodes to every other node in the graph. This distance signifies the level of similarity; nodes with shorter paths to target nodes share more similar attributes with the retiring nodes. Conversely, nodes with longer distances have more dissimilar characteristics, indicating a greater divergence between the plants contained within them and the attributes of the retiring plants within target nodes.  This is our approximation for a \textit{coarse-grained} geodesic distance in high dimensional space. \textit{explain edge weighting here as well?}
-    Nodes where all plants are planned for full retirement (100\% of plants within) are marked as target nodes. These nodes are colored blue and labeled with an \textbf{S}. The edges in the graph are weighted to indicate the relationships between nodes. Nodes are sized according to the number of plants in each. 
+    \textbf{(a, b)} Employing Dijkstra's algorithm, we determine the shortest path and corresponding distance from sink nodes to every other node in the graph. Nodes where all plants are planned for full retirement (100\% of plants within) are marked as sinks. These nodes are colored blue and labeled with an \textbf{S}. Distances signify the level of similarity; nodes with shorter paths to sinks share more similar attributes. Conversely, nodes with longer distances have more dissimilar characteristics, indicating a greater divergence between the plants contained within them and the attributes of the retiring plants within sink nodes.  This is our approximation for a \textit{coarse-grained} geodesic distance in high dimensional space. \textit{explain edge weighting here as well?}
+    The edges in the graph are weighted to indicate the relationships between nodes. Nodes are sized according to the number of plants in each. 
+    \textbf{(c, d, e, f)} Nodes are colored by variables that exhibit variance within the group, emphasizing inter-group distinctions. Higher values are assigned a darker red. The color scheme elucidates the spatial dynamics within connected components of the graph, revealing monotonic trends and differences in specific variables as distances from the source nodes increase.
     \label{fig:shortest-path-graphs}
 \end{figure}
+
+
+%%%%%%%%%%%
+
+% Group 3:
+% \begin{table}[H]
+%     \centering
+%     \small
+%     \begin{adjustbox}{width=\textwidth}
+%       \begin{tabular}{|l | l | l | l | l | l | l | l | l | l |}
+%         \toprule
+%         \textbf{Plant Name} & \textbf{State} & \textbf{Retirement Date} & \textbf{Ownership Type} & \textbf{Age at Retirement} & \textbf{Capacity Factor} & \textbf{Coal Nameplate (MW)} \\
+%         \midrule\midrule
+%         Limestone & TX & 2029 & Investor-Owned & 44 & 35\% & 1850 & \\
+%         Belle River & MI & 2028 & Investor-Owned & 44 & 56\% & 1395 & \\
+%         Welsh & TZ & 2028 & Investor-Owned & 51 & 44\% & 1116 & \\
+%         \bottomrule
+%     \end{tabular}
+%   \end{adjustbox}
+%   \caption{Dataset \& Data Sources Breakdown}
+% \end{table}
