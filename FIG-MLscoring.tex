@@ -1,4 +1,4 @@
-\begin{figure}[h!]
+\begin{figure}[htb]
     \centering
     \includesvg[inkscapelatex=false,width=\linewidth]{svg_figs/ml_featureImportance_accuracy.svg}  
     \caption{\textbf{Variable Importances in Predicting Planned Retirements}}
@@ -29,9 +29,10 @@
 
     \smallskip  % Added line skip here
     
-    We use multiple supervised machine learning methods (Deciscion Tree, Extra Trees, Gradient Boosting, Random Forest) and evaluation metrics (Train-Test Split, Cross Validation) to predict coal plant retirements and evaluate prediction accuracy.
-    While a Train-Test Split produces  better results, we see the evaluation is quite sensitive to how the dataset is split, especially because our coal dataset is small. Additionally, Train-Test Split only uses a portion of the data only for training and another portion only for testing, so is prone to overfitting.
-    Cross Validation provides a more robust estimate of model performance by using multiple splits, as well as utilizing the entire dataset for both training and testing. We have shown both methods here as they each have their advantages and drawbacks, and both represent industry-standard methods for evaluating supervised machine learning results.
+    We use multiple supervised machine learning methods (Deciscion Tree, Elastic Net, Gradient Boosting, Lasso Regresison, Random Forest) and evaluation metrics (Train-Test Split, Cross Validation) to predict coal plant retirements and evaluate prediction accuracy.
+    An F1-Score (as seen on the \textit{y axis}) is a metric that balances precision and recall, providing a single value that indicates a model's overall accuracy by considering both false positives and false negatives; higher F1 scores (ranging from 0 to 1) indicate better performance.
+    While a Train-Test Split produces  better results, we see the evaluation is quite sensitive to how the dataset is split, especially because our coal dataset is small. Additionally, Train-Test Split uses a portion of the data only for training and another portion only for testing, so is prone to overfitting.
+    Cross Validation provides a more robust estimate of model performance by using multiple splits, as well as utilizing the entire dataset for both training and testing. However, this evaluation metric is significaltly more computationally intensive than a Train-Test Split, typically ued for thorough evaluations of ML results. We have shown both methods here as they each have their advantages and drawbacks, and both represent standard methods for evaluating supervised machine learning results.
     \label{fig:ML-Predictions}
 \end{figure}
 
