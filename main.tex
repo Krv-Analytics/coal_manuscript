@@ -25,6 +25,22 @@
 \usepackage{xcolor}
 
 
+
+
+%% Revising Macros for Sid, Grace, Stu, and Jez
+\newcommand{\sidTodo}[1]{{\color{red}[Sid: {#1}]}}
+\newcommand{\sidNote}[1]{\marginpar{\textcolor{red}{$\leftarrow$\fbox{Sid}}}\footnote{\sf {\color{red}Sid: {#1}}}}
+
+\newcommand{\stuTodo}[1]{{\color{magenta}[Stu: {#1}]}}
+\newcommand{\stuNote}[1]{\marginpar{\textcolor{magenta}{$\leftarrow$\fbox{Stu}}}\footnote{\sf {\color{magenta}Stu: {#1}}}}
+
+\newcommand{\jezTodo}[1]{{\color{green}[Jez: {#1}]}}
+\newcommand{\jezNote}[1]{\marginpar{\textcolor{green}{$\leftarrow$\fbox{Jez}}}\footnote{\sf {\color{green}Jez: {#1}}}}
+
+\newcommand{\graceTodo}[1]{{\color{blue}[Grace: {#1}]}}
+\newcommand{\graceNote}[1]{\marginpar{\textcolor{blue}{$\leftarrow$\fbox{Grace}}}\footnote{\sf {\color{blue}Grace: {#1}}}}
+
+
 %  ╭────────────────────────────────────────────────────────────────────────────────────────╮
 %  │  Imports required for table formatting -- see table_testing.tex for more info          |
 %  ╰────────────────────────────────────────────────────────────────────────────────────────╯
@@ -119,7 +135,7 @@
 %  ╭──────────────────────────────────────────────────────────╮
 %  │ Intro                                                    |
 %  ╰──────────────────────────────────────────────────────────╯
-
+\stuTodo{I've put in some macros for notes and todos. If my name is Sid, example usage is $\backslash$sidTodo for todos and $\backslash$sidNote for notes. (Supported for Sid, Grace, Stu and Jez.) }
 \input{intro}
 
 \input{motivating_methodology}

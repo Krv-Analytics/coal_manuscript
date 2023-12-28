@@ -7,10 +7,7 @@
 \section{Introduction}
 
 
-
-Reducing electricity sector emissions is crucial to decarbonizing the United States (U.S.) economy, particularly given electricity's growing importance for meeting transportation and building energy end uses.
-% \cite{ipcc_global_2022}. 
-Accounting for 59\% of electricity greenhouse gas emissions but only 22\% of electricity generation, coal power remains the single largest source of CO\textsubscript{2} emissions in the U.S. electricity sector.
+Reducing electricity sector emissions is crucial to decarbonizing the United States (U.S.) economy, particularly given electricity's growing importance for meeting transportation and building energy end uses.\stuNote{Note my field, but I think we come out the gates with the statement that we need a centralized strategy for Coal Plants. This feels like auxiliary info and we're warming up into paragraph four, which could maybe use some stronger language (see note 3). } Accounting for 59\% of electricity greenhouse gas emissions but only 22\% of electricity generation, coal power remains the single largest source of CO\textsubscript{2} emissions in the U.S. electricity sector.
 % \cite{us_epa_sources_2015}. 
 
 For achieving decarbonization goals, the phaseout of coal power is as important as the build-out of renewable energy.
@@ -30,22 +27,20 @@ net-zero emissions,
 % \cite{larson_net-zero_2021}, 
 and the Paris Climate Agreement. As seen in Fig. \ref{fig:ret_timeline}, relying on announced retirements is insufficient for meeting climate targets.
 Even enforcing retirements at the end of anticipated lifespans (50 yrs old) would result in an average of 12.95 GW/yr of coal capacity being retired through 2035,
-not fast enough to eliminate even 80\% of US coal capacity by 2035. 
-\textcolor{red}{\textit{This is plant level, not accounting for some of the Gens that are 50 shown in the below fig. Need to either reconcile this number or update the fig to be plant level and not generator level...}}
+not fast enough to eliminate even 80\% of US coal capacity by 2035.\sidNote{This is plant level, not accounting for some of the Gens that are 50 shown in the below fig. Need to either reconcile this number or update the fig to be plant level and not generator level...}
 There is a need for a more comprehensive, expedited coal phaseout plan.
-
 Despite numerous studies demonstrating the feasibility of phasing out coal by 2035 \textit{(cite papers here)}, 
 real-world action remains elusive - thus far, feasibility has not translated into practice. \textit{insert statistics about current phase out rate to prove this point} 
 Rather than suggesting a feasible route forwards, we need to be evaluating the efficacy of strategies to speed up the retirement of US coal plants. 
 Instead of proposing new policies, the primary focus of this paper is on understanding the nuances of the US coal fleet to better assess the effectiveness 
 of existing policies and recommend optimal resource allocations. We aim to guide the targeting of these policies toward various aspects of the coal fleet.
+\stuTodo{Introduce manifold learning method here. } 
 
 A detailed understanding of the composition and
 diversity of the US coal fleet facilitates more targeted and thus effective policymaking, better resource allocation, and aids in-depth
 understandings of the barriers and incentives associated with retiring different facets of coal plants. However, to date there have been no wholistic attempts to
 classify the US Coal Plant Fleet from an interdisciplinary perspective. Understanding coal plant retirement patterns 
-and guiding the distribution of resources for the phased retirement of coal power plants are crucial aspects we aim to address in this paper.
-
+and guiding the distribution of resources for the phased retirement of coal power plants are crucial aspects we aim to address in this paper.\stuNote{I think we need to end this paragraph on a stronger note... ``it is imperative we elucidate an effective and coordinated centralized strategy"   (made clear from the dire situation of decarbonations from stats above). This is part 1 of motivating why clustering.}
 
 %  ╭────────────────────────────────────╮
 %  │  timeline fig                      |
@@ -65,7 +60,7 @@ and guiding the distribution of resources for the phased retirement of coal powe
             \hline
             \textbf{Metric} & \textbf{Value} \\
             \hline\hline
-            Total Coal Capacity (as of the end of 2022) \textcolor{red}{\textit{add note on what qualifies as a coal plant}} & 201.9 GW\\
+            Total Coal Capacity (as of the end of 2022) \sidTodo{add note on what qualifies as a coal plant} & 201.9 GW\\
             \hline
             Required Rate of Retirement per Year to Hit Target: 100\% of Coal Capacity Retired by 2035 & 16.82 GW/yr\\
             \hline
@@ -98,7 +93,7 @@ and guiding the distribution of resources for the phased retirement of coal powe
     %  │  Drawbacks of Current Approaches   |
     %  ╰────────────────────────────────────╯
 
-\subsection{Vulnerability Scoring and Age-centric Analyses}
+\subsection{Vulnerability Scoring and Age-centric Analyses}\stuNote{I think this can be combined with Section 1.3 and significantly shortened. With that said, we need a consensus on how to attack addressing coal plant retirement prediction. In my opinion, this is not the purpose of the paper (our method provides understanding of plants that are the most difficult to retire, but we need to decide that providing a "more accurate prediction" of retirement is something we are going after. There are numerous methods that our grouping will undoubtedly improve their predictions, but to what degree and why a particular method was chosen requires from scratch motivation. There is no way to objectively classify a GOOD and BAD prediction.}
 
 Retiring coal plants in the USA poses a complicated, multi-faceted problem. Many papers (insert citations here) point to technical, financial, and environmental 
 coal plant attributes as a way to determine low hanging fruit and prioritize retirements, utilizing a composite vulnerability score that combines these factors to guide 
