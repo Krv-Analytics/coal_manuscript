@@ -15,14 +15,6 @@ digestible descriptions of these groups. This allows us to illustrate which feat
 available data fields.
 
 \vspace{\baselineskip}
-
-\highlight{How to interpret the model below:
-\begin{itemize}
-    \item \textit{Nodes} (circles) represent clusters of similar coal plants.
-    \item \textit{Edges} (lines) connect similar clusters based on multidimensional relationships in the data.
-    \item \textit{Groups} (connected nodes) make up connected components, or isolated sections of the graph.
-\end{itemize}
-}
 %%%%%%%%%%%
 
 
@@ -58,48 +50,56 @@ available data fields.
 
 \subsubsection{Policy Efficacy and Optimizing Resource Allocation}
 
-
-
 %  ╭──────────────────────────────────────────────────────────╮
-%  │ Shortest Path Graphs Fig                                 |
+%  │ Group 3 - why sub-graph analysis?                        |
 %  ╰──────────────────────────────────────────────────────────╯
 \begin{figure}[H]
     \centering
-    \begin{minipage}{0.5\textwidth}
-        \includesvg[inkscapelatex=false,width=\linewidth]{svg_figs/group3_path.svg}  
-        \subcaption{\textbf{Group 3} - Distance to Sink Nodes}
+
+    \begin{minipage}{0.32\textwidth}
+        \includesvg[inkscapelatex=false,width=\linewidth]{svg_figs/group3_percCapMax.svg}  
+        \subcaption{Node colors represent the maximum percentage of retiring coal capacity at a plant within the node.}
     \end{minipage}%
-    \begin{minipage}{0.5\textwidth}
-        \includesvg[inkscapelatex=false,width=\linewidth]{svg_figs/group4_path.svg}  
-        \subcaption{\textbf{Group 4} - Distance to Sink Nodes}
+    \hfill
+    \begin{minipage}{0.32\textwidth}
+        \includesvg[inkscapelatex=false,width=\linewidth]{svg_figs/group3-percCapAve.svg}  
+        \subcaption{Average percentage of coal capacity retiring within each node.}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.32\textwidth}
+        \includesvg[inkscapelatex=false,width=\linewidth]{svg_figs/group3-subGraphs.svg}  
+        \subcaption{Subgraph structures identified via label propagation community detection, colored by sub-structure.}
     \end{minipage}
 
-    \begin{minipage}{0.25\textwidth}
-        \includesvg[inkscapelatex=false,width=\linewidth]{svg_figs/group3_averageCashflow.svg}  
-        \subcaption{Average Cashflows}
-    \end{minipage}%
-    \begin{minipage}{0.25\textwidth}
-        \includesvg[inkscapelatex=false,width=\linewidth]{svg_figs/group3_PM2.5.svg}  
-        \subcaption{PM 2.5 Emissions}
-    \end{minipage}%
-    \begin{minipage}{0.25\textwidth}
-        \includesvg[inkscapelatex=false,width=\linewidth]{svg_figs/group4_ownership.svg}  
-        \subcaption{Municipal Ownership}
-    \end{minipage}%
-    \begin{minipage}{0.25\textwidth}
-        \includesvg[inkscapelatex=false,width=\linewidth]{svg_figs/group4_proCoal.svg}  
-        \subcaption{Oppose Regulating Coal}
+    \medskip
+
+    \highlight{How to interpret the models above:
+        \begin{itemize}
+            \item \textit{Nodes} (circles) represent clusters of similar coal plants.
+            \item \textit{Edges} (lines) connect similar nodes based on multidimensional relationships in the data. 
+            \item \textit{Groups} (connected nodes) make up connected components, or isolated sections of the graph.
+        \end{itemize}
+    }
+
+    \medskip
+
+    \begin{minipage}{1\textwidth}
+        \includesvg[inkscapelatex=false,width=\linewidth]{svg_figs/group3-heatmap.svg}  
+        \subcaption{Classification of Group 3 Sub-Graph Retirement Archetypes (all plant with full planned retirements in sub-graphs)}
     \end{minipage}
 
-    \caption{\textbf{Proximity To Retirement}}
+    \caption{\textbf{High Health Impact Plants (Group 3) Subgraph Analysis}}
     \medskip
     \footnotesize
-    \textbf{(a, b)} Employing Dijkstra's algorithm, we determine the shortest path and corresponding distance from sink nodes to every other node in the graph. Nodes where all plants are planned for full retirement (100\% of plants within) are marked as sinks. These nodes are colored blue and labeled with an \textbf{S}. Distances signify the level of similarity; nodes with shorter paths to sinks share more similar attributes. Conversely, nodes with longer distances have more dissimilar characteristics, indicating a greater divergence between the plants contained within them and the attributes of the retiring plants within sink nodes.  This is our approximation for a \textit{coarse-grained} geodesic distance in high dimensional space. \textit{explain edge weighting here as well?}
-    The edges in the graph are weighted to indicate the relationships between nodes. Nodes are sized according to the number of plants in each. 
-    \textbf{(c, d, e, f)} Nodes are colored by variables that exhibit variance within the group, emphasizing inter-group distinctions. Higher values are assigned a darker red. The color scheme elucidates the spatial dynamics within connected components of the graph, revealing monotonic trends and differences in specific variables as distances from the source nodes increase.
-    \label{fig:shortest-path-graphs}
+    \textbf{(a)} Nearly every node contains at least one plant with plans to fully retire. In such a case (as opposed to when a higher portion of nodes contain \textit{only} non-retired plants),
+    we opt to use an algorithm designed for community detection in network analysis to break up our component and understand the different retirement archetypes within
+    our group of High Health Impact Plants.
+    \textbf{(b)} While the majority of nodes in (a) contain plants that will be fully retired, we can see a distribution of retirements across our nodes. This indicates that our hotspot of retirement plants (the cluster of red nodes at the middle-left of our group) 
+    are representative of only a certain classification of coal plant with high health impacts.
+    \textbf{(c)} Here we find three subgraph structures within our group, indicating that 
+    there are three different retirement archetypes by which we can classify our High Health Impact Plants.
+    \textbf{(d)} Retirement Archetype Comparison, comparing only plants with full planned retirement in each sub-group. See SI.\ref{group3-subgraph-Table} for a breakdown of the plants in each subgroup and which ones have full planned retirements.
 \end{figure}
-
 
 
 %%%%%%%%%%%
