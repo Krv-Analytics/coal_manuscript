@@ -55,6 +55,15 @@ available data fields.
 %  ╰──────────────────────────────────────────────────────────╯
 \begin{figure}[H]
     \centering
+    \highlight{How to interpret the models below:
+        \begin{itemize}
+            \item \textit{Nodes} (circles) represent clusters of similar coal plants, sized here by the number of plants within.
+            \item \textit{Edges} (lines) connect similar nodes based on multidimensional relationships in the data. 
+            \item \textit{Groups} (connected nodes) make up connected components, or isolated sections of the graph.
+        \end{itemize}
+    }
+
+    \bigskip
 
     \begin{minipage}{0.32\textwidth}
         \includesvg[inkscapelatex=false,width=\linewidth]{svg_figs/group3_percCapMax.svg}  
@@ -63,7 +72,7 @@ available data fields.
     \hfill
     \begin{minipage}{0.32\textwidth}
         \includesvg[inkscapelatex=false,width=\linewidth]{svg_figs/group3-percCapAve.svg}  
-        \subcaption{Average percentage of coal capacity retiring within each node.}
+        \subcaption{Colored by the average percentage of coal capacity retiring within each node.}
     \end{minipage}
     \hfill
     \begin{minipage}{0.32\textwidth}
@@ -73,19 +82,9 @@ available data fields.
 
     \medskip
 
-    \highlight{How to interpret the models above:
-        \begin{itemize}
-            \item \textit{Nodes} (circles) represent clusters of similar coal plants.
-            \item \textit{Edges} (lines) connect similar nodes based on multidimensional relationships in the data. 
-            \item \textit{Groups} (connected nodes) make up connected components, or isolated sections of the graph.
-        \end{itemize}
-    }
-
-    \medskip
-
     \begin{minipage}{1\textwidth}
         \includesvg[inkscapelatex=false,width=\linewidth]{svg_figs/group3-heatmap.svg}  
-        \subcaption{Classification of Group 3 Sub-Graph Retirement Archetypes (all plant with full planned retirements in sub-graphs)}
+        \subcaption{Sub-Graph Retirement Archetype Classification (all plants with full planned retirements in (c) sub-graphs)}
     \end{minipage}
 
     \caption{\textbf{High Health Impact Plants (Group 3) Subgraph Analysis}}
@@ -93,7 +92,7 @@ available data fields.
     \footnotesize
     \textbf{(a)} Nearly every node contains at least one plant with plans to fully retire. In such a case (as opposed to when a higher portion of nodes contain \textit{only} non-retired plants),
     we opt to use an algorithm designed for community detection in network analysis to break up our component and understand the different retirement archetypes within
-    our group of High Health Impact Plants.
+    our group of High Health Impact Plants. See SI.\ref{fig:group3-shortestPath-graphs} for a more detailed view of subgraph structures and proximity to fully retired nodes.
     \textbf{(b)} While the majority of nodes in (a) contain plants that will be fully retired, we can see a distribution of retirements across our nodes. This indicates that our hotspot of retirement plants (the cluster of red nodes at the middle-left of our group) 
     are representative of only a certain classification of coal plant with high health impacts.
     \textbf{(c)} Here we find three subgraph structures within our group, indicating that 

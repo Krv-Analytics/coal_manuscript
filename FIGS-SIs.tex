@@ -61,37 +61,37 @@
 %  ╰──────────────────────────────────────────────────────────╯
 \begin{figure}[htb]
     \centering
-    \begin{minipage}{0.5\textwidth}
+    \begin{minipage}{1\textwidth}
         \includesvg[inkscapelatex=false,width=\linewidth]{svg_figs/group3_path.svg}  
         \subcaption{\textbf{Group 3} - Distance to Sink Nodes}
     \end{minipage}%
-    \begin{minipage}{0.5\textwidth}
-        \includesvg[inkscapelatex=false,width=\linewidth]{svg_figs/group4_path.svg}  
-        \subcaption{\textbf{Group 4} - Distance to Sink Nodes}
-    \end{minipage}
+    % \begin{minipage}{0.5\textwidth}
+    %     \includesvg[inkscapelatex=false,width=\linewidth]{svg_figs/group4_path.svg}  
+    %     \subcaption{\textbf{Group 4} - Distance to Sink Nodes}
+    % \end{minipage}
 
-    \begin{minipage}{0.25\textwidth}
+    \begin{minipage}{0.48\textwidth}
         \includesvg[inkscapelatex=false,width=\linewidth]{svg_figs/group3_averageCashflow.svg}  
         \subcaption{Average Cashflows}
     \end{minipage}%
-    \begin{minipage}{0.25\textwidth}
+    \begin{minipage}{0.48\textwidth}
         \includesvg[inkscapelatex=false,width=\linewidth]{svg_figs/group3_PM2.5.svg}  
         \subcaption{PM 2.5 Emissions}
     \end{minipage}%
-    \begin{minipage}{0.25\textwidth}
-        \includesvg[inkscapelatex=false,width=\linewidth]{svg_figs/group4_ownership.svg}  
-        \subcaption{Municipal Ownership}
-    \end{minipage}%
-    \begin{minipage}{0.25\textwidth}
-        \includesvg[inkscapelatex=false,width=\linewidth]{svg_figs/group4_proCoal.svg}  
-        \subcaption{Oppose Regulating Coal}
-    \end{minipage}
+    % \begin{minipage}{0.25\textwidth}
+    %     \includesvg[inkscapelatex=false,width=\linewidth]{svg_figs/group4_ownership.svg}  
+    %     \subcaption{Municipal Ownership}
+    % \end{minipage}%
+    % \begin{minipage}{0.25\textwidth}
+    %     \includesvg[inkscapelatex=false,width=\linewidth]{svg_figs/group4_proCoal.svg}  
+    %     \subcaption{Oppose Regulating Coal}
+    % \end{minipage}
 
-    \caption{\textbf{Proximity To Retirement}}
+    \caption{\textbf{Proximity To Retirement} - Supporting Sub-Graph Analysis}
     \medskip
     \footnotesize
-    \textbf{(a, b)} Employing Dijkstra's algorithm, we determine the shortest path and corresponding distance from sink nodes to every other node in the graph. Nodes where all plants are planned for full retirement (100\% of plants within) are marked as sinks. These nodes are colored blue and labeled with an \textbf{S}. Distances signify the level of similarity; nodes with shorter paths to sinks share more similar attributes. Conversely, nodes with longer distances have more dissimilar characteristics, indicating a greater divergence between the plants contained within them and the attributes of the retiring plants within sink nodes.  This is our approximation for a \textit{coarse-grained} geodesic distance in high dimensional space. \textit{explain edge weighting here as well?}
+    \textbf{(a)} Employing Dijkstra's algorithm, we determine the shortest path and corresponding distance from sink nodes to every other node in the graph. Nodes where all plants are planned for full retirement (100\% of plants within) are marked as sinks. These nodes are colored blue and labeled with an \textbf{S}. Distances signify the level of similarity; nodes with shorter paths to sinks share more similar attributes. Conversely, nodes with longer distances have more dissimilar characteristics, indicating a greater divergence between the plants contained within them and the attributes of the retiring plants within sink nodes.  This is our approximation for a \textit{coarse-grained} geodesic distance in high dimensional space. \textit{explain edge weighting here as well?}
     The edges in the graph are weighted to indicate the relationships between nodes. Nodes are sized according to the number of plants in each. 
-    \textbf{(c, d, e, f)} Nodes are colored by variables that exhibit variance within the group, emphasizing inter-group distinctions. Higher values are assigned a darker red. The color scheme elucidates the spatial dynamics within connected components of the graph, revealing monotonic trends and differences in specific variables as distances from the source nodes increase.
-    \label{fig:shortest-path-graphs}
+    \textbf{(b, c)} Nodes are colored by variables that exhibit variance within the group, emphasizing inter-group distinctions. Higher values are assigned a darker red. The color scheme elucidates the spatial dynamics within connected components of the graph, revealing monotonic trends and differences in specific variables as distances from the source nodes increase.
+    \label{fig:group3-shortestPath-graphs}
 \end{figure}
