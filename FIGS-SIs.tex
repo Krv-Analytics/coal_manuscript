@@ -1,19 +1,5 @@
 \begin{figure}[htb]
     \centering
-    \includesvg[inkscapelatex=false,width=\linewidth]{svg_figs/heatmap_large.svg}  
-    \caption{\textbf{Full Plant Groups Comparison Heatmap}}
-    \medskip
-    \footnotesize
-
-    \smallskip  
-    
-    % Insert Fig Caption Here
-
-    \label{fig:heatmap-SIs}
-\end{figure}
-
-\begin{figure}[htb]
-    \centering
     \includesvg[inkscapelatex=false,width=1\columnwidth]{svg_figs/fleetInfo/gen_age.svg}
     \includesvg[inkscapelatex=false,width=1\columnwidth]{svg_figs/fleetInfo/gen_ageAtRetirement.svg}
     \caption{\textbf{Coal Generator Age Comparison}}
@@ -25,4 +11,45 @@
     % Insert Fig Caption Here
 
     \label{fig:gen-ages}
+\end{figure}
+
+\begin{figure}[htb]
+    \centering
+    \includesvg[inkscapelatex=false,width=\linewidth]{svg_figs/heatmap_large.svg}  
+    \caption{\textbf{Full Plant Groups Comparison Heatmap}}
+    \medskip
+    \footnotesize
+
+    \smallskip  
+    
+    Note that the unclustered group has large standard deviations in most columns as they are \textit{not} similar... This has been displayed moreso as a reminder than 3.14\% of coal 
+    capacity remains outside the scope of this analysis.
+
+    \label{fig:heatmap-SIs}
+\end{figure}
+
+\begin{figure}[htb]
+    \centering
+
+    \begin{minipage}{0.95\textwidth}
+        \includesvg[inkscapelatex=false,width=1\columnwidth]{svg_figs/distribution-cracking.svg}
+        \subcaption{Cracking Distribution of Capacity (minimizing variance across groups)}
+    \end{minipage}
+
+    \begin{minipage}{0.95\textwidth}
+        \includesvg[inkscapelatex=false,width=1\columnwidth]{svg_figs/distribution-minimized.svg}
+        \subcaption{Minimizing the Largest Share of Capacity (minimizing the maximum value of a group)}
+    \end{minipage}%
+    
+    \caption{\textbf{Model Distributions} - Used for Model Selection}
+    \medskip
+    \footnotesize
+
+    \smallskip  
+    
+    The \textit{x axis} displays the number of connected components (groups) in each graph, and the \textit{y axis} displays the variance (specified in by the chart caption) of Total Nameplate Capacity (MW) across connected components (groups).
+    \textbf{(a)} The goal is to pick the number of connected components (groups) in which the variance of capacity between groups reaches an inflection point (the elbow of the graph).
+    \textbf{(b)} The goal is to select a model that minimizes the maximum capacity contained within one group (we don't want a single group of plants to contain over 50\% of total US coal capacity).
+
+    \label{fig:run-measures}
 \end{figure}
