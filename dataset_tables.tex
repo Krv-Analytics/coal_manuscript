@@ -259,69 +259,78 @@
 
 
 \begin{table}[htb]
-  \centering
-  \small
-  \begin{adjustbox}{width=\textwidth}
-     \begin{tabular}{|l|r|r|r|r|}
-         \toprule
-         Plant Name & Sub-Graph Number & Retirement Status & Planned Retirement Date & State \\
-         \midrule
-         Welsh &         0 &           Full &           2028.0 &    TX \\
-         Conemaugh &         0 &           Not Planned &                &    PA \\
-   Cumberland (TN) &         0 &           Full &           2026.0 &    TN \\
-           Shawnee &         0 &           Partial &           2033.0 &    KY \\
-          Rockport &         0 &           Full &           2028.0 &    IN \\
-             Ghent &         0 &           Not Planned &                &    KY \\
-            Gibson &         0 &           Partial &           2028.0 &    IN \\
-Homer City Generating Station &         0 &           Not Planned &                &    PA \\
-Independence Steam Electric Station &         0 &           Full &           2030.0 &    AR \\
-   Mill Creek (KY) &         0 &           Partial &           2024.0 &    KY \\
- James H Miller Jr &         0 &           Not Planned &                &    AL \\
-           Labadie &         0 &           Not Planned &                &    MO \\
-         Limestone &         0 &           Full &           2029.0 &    TX \\
-       White Bluff &         0 &           Full &           2028.0 &    AR \\
-       Monroe (MI) &         1 &           Not Planned &                &    MI \\
-      Coleto Creek &         1 &           Full &           2027.0 &    TX \\
-        J K Spruce &         1 &           Full &           2027.0 &    TX \\
-              GREC &         1 &           Not Planned &                &   OK  \\
-Fayette Power Project &         1 &           Not Planned &                &   TX \\
-              Tolk &         1 &           Full &           2037.0 &    TX \\
-         J T Deely &         1 &           Full &           2024.0 &   TX \\
-        Miami Fort &         2 &           Full &           2027.0 &    OH \\
-        W A Parish &         2 &           Not Planned &                &    TX \\
-       Belle River &    [0, 1] &           Full &           2028.0 &    MI \\
-          Keystone &    [0, 2] &           Not Planned &                &    PA \\
-          Cardinal &    [0, 2] &           Partial &           2028.0 &    OH \\
-FirstEnergy Harrison Power Station &    [0, 2] &           Not Planned &                &    WV \\
-  Gavin Power, LLC &    [0, 2] &           Not Planned &                &    OH \\
-       Martin Lake &    [0, 2] &           Not Planned &                &    TX \\
-         \bottomrule
-        \end{tabular}
+    \begin{minipage}{1\textwidth}
+      \begin{adjustbox}{width=\textwidth}
+          \begin{small}
+              \begin{tabular}{cllllllll}
+                  \multicolumn{1}{l}{\textbf{Sub-Graph Number}} & Plant Name & Retirement Date & State & Ownership Type & Sector & Primary driver & Secondary driver \\
+                  \midrule
+                  \multirow{7}{*}{0} & Cumberland (TN) & 2026 & TN & Federal & Electric Utility & Air Quality Compliance - SO\textsubscript{2} \& NO\textsubscript{x} & Natural Gas Conversion / Not cost competitive  \\
+                  & Rockport & 2028 & IN & Investor Owned & Electric Utility & Air Quality Compliance - SO\textsubscript{2} & Financial - Install Pollution Controls or Shut Down \\
+                  & White Bluff & 2028 & AR & Investor Owned & Electric Utility & Clean Air Act Violation & \\
+                  & Belle River & 2028 & MI & Investor-Owned & Electric Utility & Legal Challenges over Energy Pricing & Public Health Concerns - High Pollution \\
+                  & Welsh & 2028 & TX & Investor Owned & Electric Utility & Air Quality Compliance - SO\textsubscript{2} \& NO\textsubscript{x} & Financial - Install Pollution Controls or Shut Down \\
+                  & Limestone & 2029 & TX & Investor Owned & IPP Non-CHP & Cost Competition with Renewables + Utility Climate Targets & Air Quality Compliance - SO\textsubscript{2} \& NO\textsubscript{x} \\
+                  & Independence Steam Electric Station & 2030 & AR & Investor Owned & Electric Utility & Clean Air Act Violation & Costly Compliance with Regional Haze Program \\
+                  \midrule
+                  \multirow{4}{*}{1} & Coleto Creek & 2027 & TX & Investor Owned & IPP Non-CHP & Coal Waste Compliance - Too Expensive to Comply & Not cost competitive \\
+                  & J K Spruce & 2027 & TX & Municipal & Electric Utility & City Carbon Neutrality Target & Air Quality Compliance - NO\textsubscript{x} \& Ozone \\
+                  & J T Deely & 2024 & TX & Municipal & Electric Utility & Pollution Control Updates - Too Expensive to Comply &  \\
+                  & Tolk & 2037 & TX & Investor Owned &  \\
+                  & Belle River & 2028 & MI & Investor-Owned & Electric Utility & Legal Challenges over Energy Pricing & Public Health Concerns - High Pollution \\
+                  \midrule
+                  \multirow{1}{*}{2} & Miami Fort & 2027 & OH & Investor Owned & IPP Non-CHP & Pollution Control Updates - Too Expensive to Comply & Net-Zero Emissions Target (Vistra) \\
+                  \midrule
+              \end{tabular}
+          \end{small}
       \end{adjustbox}
-      \caption{\textbf{Sub-Graph Plant Breakdown: High Health Impact Plants (Group 3)} }
-      \label{group3-subgraph-Table}
-\end{table}
+      \subcaption{Sub-Graph Retirement Drivers - Group 3}
+  \end{minipage}    
 
+  \bigskip
 
-\begin{table}[htb]
-  \centering
-\begin{tabular}{|l|c|c|r|r|}
-  \toprule
-  Plant Name & community &  ret\_STATUS &  Retirement Date & State \\
-  \midrule
-                      Cumberland (TN) &         0 &           2 &           2026.0 &    TN \\
-  Independence Steam Electric Station &         0 &           2 &           2030.0 &    AR \\
-                            Limestone &         0 &           2 &           2029.0 &    TX \\
-                             Rockport &         0 &           2 &           2028.0 &    IN \\
-                                Welsh &         0 &           2 &           2028.0 &    TX \\
-                          White Bluff &         0 &           2 &           2028.0 &    AR \\
-                         Coleto Creek &         1 &           2 &           2027.0 &    TX \\
-                           J K Spruce &         1 &           2 &           2027.0 &    TX \\
-                            J T Deely &         1 &           2 &           2024.0 &   NaN \\
-                                 Tolk &         1 &           2 &           2037.0 &    TX \\
-                           Miami Fort &         2 &           2 &           2027.0 &    OH \\
-                          Belle River &    [0, 1] &           2 &           2028.0 &    MI \\
-  \bottomrule
-  \end{tabular}
+%   \begin{minipage}{1\textwidth}
+%     \begin{adjustbox}{width=\textwidth}
+%       \small
+%      \begin{tabular}{|l|r|r|r|r|}
+%          \toprule
+%          Plant Name & Sub-Graph Number & Retirement Status & Planned Retirement Date & State \\
+%          \midrule
+%              Welsh &         0 &           Full &           2028.0 &    TX \\
+%          Conemaugh &         0 &           Not Planned &                &    PA \\
+%    Cumberland (TN) &         0 &           Full &           2026.0 &    TN \\
+%            Shawnee &         0 &           Partial &           2033.0 &    KY \\
+%           Rockport &         0 &           Full &           2028.0 &    IN \\
+%              Ghent &         0 &           Not Planned &                &    KY \\
+%             Gibson &         0 &           Partial &           2028.0 &    IN \\
+% Homer City Generating Station &         0 &           Not Planned &                &    PA \\
+% Independence Steam Electric Station &         0 &           Full &           2030.0 &    AR \\
+%    Mill Creek (KY) &         0 &           Partial &           2024.0 &    KY \\
+%  James H Miller Jr &         0 &           Not Planned &                &    AL \\
+%            Labadie &         0 &           Not Planned &                &    MO \\
+%          Limestone &         0 &           Full &           2029.0 &    TX \\
+%        White Bluff &         0 &           Full &           2028.0 &    AR \\
+%        Monroe (MI) &         1 &           Not Planned &                &    MI \\
+%       Coleto Creek &         1 &           Full &           2027.0 &    TX \\
+%         J K Spruce &         1 &           Full &           2027.0 &    TX \\
+%               GREC &         1 &           Not Planned &                &   OK  \\
+% Fayette Power Project &         1 &           Not Planned &                &   TX \\
+%               Tolk &         1 &           Full &           2037.0 &    TX \\
+%          J T Deely &         1 &           Full &           2024.0 &   TX \\
+%         Miami Fort &         2 &           Full &           2027.0 &    OH \\
+%         W A Parish &         2 &           Not Planned &                &    TX \\
+%        Belle River &    [0, 1] &           Full &           2028.0 &    MI \\
+%           Keystone &    [0, 2] &           Not Planned &                &    PA \\
+%           Cardinal &    [0, 2] &           Partial &           2028.0 &    OH \\
+% FirstEnergy Harrison Power Station &    [0, 2] &           Not Planned &                &    WV \\
+%   Gavin Power, LLC &    [0, 2] &           Not Planned &                &    OH \\
+%        Martin Lake &    [0, 2] &           Not Planned &                &    TX \\
+%          \bottomrule
+%         \end{tabular}
+%       \end{adjustbox}
+%       \subcaption{Sub-Graph Retirement Drivers - High Health Impact Plants}
+%   \end{minipage}    
+  \caption{Group 3 Retirement Analysis}
+  \label{group3-subgraph-Table}
 \end{table}
       
