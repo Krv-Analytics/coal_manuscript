@@ -8,6 +8,7 @@
 *.toc
 main.pdf
 
+
 # Ignore build directories
 _build
 out
@@ -23,6 +24,7 @@ out
 *.sublime*
 .idea/
 *.swp
+svg-inkscape/
 
 # Ignore temporary files
 *~

@@ -67,6 +67,21 @@ ranking. Different coal plants might operate in diverse contexts, locations, and
 one scenario might not hold the same weight in another. Second, deciding how much weight to assign to each factor in the composite score is subjective. Different stakeholders may have 
 different opinions on the importance of various components. Third, a composite score lacks detail and interpretability. Does a high vulnerability score mean a coal plant is 
 overall vulnerable, or does it excel in only one aspect while lagging in others?
+\subsubsection{\textit{the Curse of Dimensionality}}
+
+\jezTodo{Manifold Learning and Multiverse Analysis!}
+The coal plant retirement problem suffers from \textit{the curse of dimensionality}, where as the dimensions of a dataset 
+increase, the number of data points needed to guarantee reliable results grows exponentially. In the case of the current US coal 
+fleet, we have a very limited number of coal plants with very high-dimensional data associated with each. As such, standard 
+unsupervised methods fail to reliably predict which active coal plants have planned retirements on the books. Additionally, the 
+current arsenal of artificial intelligence methods fall short when it comes to comparing and analyzing complex objects across different 
+data disciplines. In regards to coal plants, we aim to analyze Environmental, Technical, Financial, Political, and Health data, making 
+it again difficult to understand the complex interactions between all variables at a high level. 
+
+Even advanced deep learning algorithms, 
+such as Gradient Boosting, struggle to effectively overcome the curse of dimensionality and provide accurate results. When looking to 
+understand the variables that are important in grouping coal plants and the important variable determinants of planned retirement, different deep learning methods give us 
+different results, showing how complex the coal plant retirement problem really is (\textit{See appendix for explanatory figs SI.\ref{fig:ML-featureImportance}, \ref{fig:ML-Predictions}}).
 
 
 \subsubsection{Note on a Changing Retirement Landscape}\label{subsec:changing-retirement-landscape}
@@ -125,12 +140,14 @@ past their prime and/or plants in good economic standing to be shut down early. 
 more comprehensive and nuanced perspective, shedding light on the inadequacies of age-centric analyses and offering a more holistic 
 framework for evaluating the future of coal plants in the evolving energy landscape.
 
+
 %  ╭──────────────────────────────────────────────────────────────────╮
 %  │  Intro Section 3: Our Contributions                              |
 %  ╰──────────────────────────────────────────────────────────────────╯
 
-\subsection{Centralizing Coal Retirement Strategies}
+\subsection{A Novel Approach to Coal Retirement}
 
+\subsubsection{Centralizing Retirement Strategy}
 
 To comprehensively address the multifaceted challenges associated with the US Coal Plant Fleet, it is imperative to group coal plants based on various dimensions, 
 encompassing environmental, economic, and operational considerations, as well as political landscapes, public opinion, health, and localized climate targets. Clustering allows us to discern patterns and relationships within the vast and diverse dataset, 
@@ -152,6 +169,21 @@ That said, rapid shifts in clean energy pricing, government subsidies, utility a
 compliance measures have altered the landscape significantly. The dynamics of previous coal plant retirements no longer accurately represent our current context.
 
 
+\subsubsection{Manifold Learning Title}\stuNote{Advantages and the Downfall of Manifold learning = we introduce multiverse analysis. This is where we highlight the ability to consider a distribution of graph models, and our selection criteria.}
+We aim to acknowledge the transformational nature of coal phaseout motivations and propose an analytical framework that reflects the 
+dynamic and multidimensional factors influencing coal plant retirement decisions. As such, we propose a novel method of analyzing the 
+US coal plant space to provide new and actionable insight. Here is what our methodology adds to the academic discipline:
+
+\begin{enumerate}
+    \item \textbf{Contextual Flexibility:} By not relying on predefined composite scores or fixed weights, our method can adapt to different scenarios, regulatory environments, and stakeholder perspectives.
+    \item \textbf{Holistic Understanding:} By allowing for a more nuanced and comprehensive understanding of a coal plant's/group of coal plants' performance, across various dimensions, we enable stakeholders to make more informed decisions.
+    \item \textbf{Transparency:} Our approach makes the evaluation process more transparent by presenting data and relationships directly. This transparency can build trust among stakeholders, and help to avoid the interpretability issues inherent to composite scores.
+    \item \textbf{Customization:} Different coal plants have unique characteristics. Our method can accommodate these variations, providing a more accurate representation of a group's strengths and weaknesses.
+\end{enumerate}
+
+We do not claim to have solved the coal plant retirement problem, nor to have figured out the best and fastest way to retire all coal plants. 
+Instead, we bring a brand new perspective that gives policy makers and other stakeholders an in-depth understanding of the coal fleet from 
+multiple perspectives.
 
 
 
