@@ -11,7 +11,7 @@ graph formation and structure.
 Details we need to cover
 \begin{itemize}
     \item data was scaled using standard scaler 
-    \item categorical varaibles were one hot encoded 
+    \item categorical variables were one hot encoded 
     \item projected into two dimensions using UMAP (ignore hyperparameter selection, 
     it will be alluded to later)
 \end{itemize}
@@ -21,13 +21,47 @@ Details we need to cover
 
 \begin{itemize}
     \item Brief overview of how mapper works coverings + local HDBSCAN + node formation + edge formation
+    \item Simplicial Complex $\to$ weighted graph.
     \item Topological meaning of being in the same node (or sharing an edge)
     \item Meaning of paths and connected components in a graph 
 \end{itemize}
 
 
 \subsection{Model Selection}
+High variability in terms of model resolution. So we uniformly sample at random
+from hyperparameter space. (UMAP, Kmapper cubical coverings and percent overlap.)
+For each model we impute by sampling randomly from a normal distrubution based on
+the existing column values (for continuous variables?).
+\jezTodo{ @sid Are we only imputing continuous variables? Will need your exact process
+for the first few sections here.} 
 
+\par For this specific problem, we are interested in models that split evenly over capacity but still 
+provide interesting group profiles. We motivate this based on the distribution of the 
+models that we generate. We want to select the elbow that balances the minimal
+variance across group capacity sums while selecting a manageable number of groups. 
+\jezTodo{@sid the x-axis (number of groups) and why we're minimizing needs to 
+be motivated here from a Coal/policy development perspecitve.}
+
+\begin{figure}[H]
+\centering
+\includesvg[inkscapelatex=false,width=\columnwidth]{svg_figs/distribution-cracking.svg}
+\subcaption{Cracking Distribution of Capacity (minimizing variance across groups)
+}
+\end{figure}
+\stuNote{Write this subcaption, I would say without Cracking in the main title.
+Don't think this is common terminology. }
+\sidNote{Would be nice to circle the model we end up picking and to fit a curve to
+aid in visualizing the elbow.}
+
+
+
+
+
+ 
+
+
+
+ 
 \begin{itemize}
-    \item 
+    \item Uniform sampling 
 \end{itemize}
