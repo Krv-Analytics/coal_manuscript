@@ -1,0 +1,51 @@
+%  ╭────────────────────────────────────╮
+%  │  timeline fig                      |
+%  ╰────────────────────────────────────╯
+
+\begin{figure}[htb]
+    \centering
+    \begin{minipage}{1\textwidth}
+        \includesvg[inkscapelatex=false,width=\linewidth]{figs/svgs/fleetInfo/whatIf_retirement_timeline.svg}  
+        \subcaption{What-If Retirement Timeline}
+    \end{minipage}
+
+    \medskip
+
+    \begin{minipage}{1\textwidth}
+    \begin{adjustbox}{width=\textwidth}
+        \begin{small}
+        \begin{tabular}{|l | r |}
+            \hline
+            \textbf{Metric} & \textbf{Value} \\
+            \hline\hline
+            Total Coal Capacity (as of the end of 2022) \sidTodo{add note on what qualifies as a coal plant} & 201.9 GW\\
+            \hline
+            Required Rate of Retirement per Year to Hit Target: 100\% of Coal Capacity Retired by 2035 & 16.82 GW/yr\\
+            \hline
+            Required Rate of Retirement per Year to Hit Target: 80\% of Coal Capacity Retired by 2035 & 13.46 GW/yr\\
+            \hline
+            Required Rate of Retirement per Year to Hit Target: 50\% of Coal Capacity Retired by 2035 & 8.41 GW/yr\\
+            \hline
+            Average Planned Rate of Retirement between 2023 and 2035 & 5.98 GW/yr\\
+            \hline
+        \end{tabular}
+    \end{small}
+    \end{adjustbox}
+    \subcaption{Actual Retirement Target Requirements}
+    \end{minipage}
+
+    \caption{\textbf{Age-Based Retirement Scenario versus Current State of US Coal Retirements}}
+    \medskip
+    \footnotesize
+
+    \textbf{(a)} A generator-level \textit{What-If} timeline of retiring US coal capacity, making the assumption that coal plants with no planned retirements will retire at 50 years old (see SI.\ref{fig:gen-ages} for an understanding of why this what-if scenario is not realistic).
+    The 50 year old retirement age comes from the average age of retirement of a coal plant in the US, and is supported by Grubert's assertion that most coal capacity will retire when it reaches the age of 50...
+    Regardless, this still leaves us shy of climate targets and hinges very heavily on a large amount of coal capacity retiring very quickly.
+    \textbf{(b)} A breakdown of retirement rates needed to hit climate targets versus the current rate of coal retirements in the US.
+
+    \label{fig:ret_timeline}
+\end{figure}
+
+
+\subsubsection*{Centralizing Retirement Strategy}
+\stuTodo{Introduce manifold learning method here. } 

@@ -1,12 +1,9 @@
 \setlength{\parindent}{20pt}
-
+\section{Introduction}
 
 %  ╭────────────────────────────────────╮
 %  │  intro-intro                       |
 %  ╰────────────────────────────────────╯
-
-\section{Introduction}
-
 
 Reducing electricity sector emissions is crucial to decarbonizing the United States (U.S.) economy, particularly given electricity's growing importance for meeting transportation and building energy end uses. Accounting for 59\% of electricity greenhouse gas emissions but only 22\% of electricity generation, coal power remains the single largest source of CO\textsubscript{2} emissions in the U.S. electricity sector.
 % \cite{us_epa_sources_2015}. 
@@ -22,7 +19,10 @@ the risk of stranded assets in the coal power sector remain low with less than 2
 % \cite{edwards_quantifying_2022, grubert_fossil_2020}. 
 These characteristics and contexts all favor a fast and complete coal phaseout. 
 
-\subsubsection*{Coal is Not Being Retired Fast Enough to Meet Climate Targets}
+%  ╭──────────────────────────────────────────────────────────────────╮
+%  │  Intro Section 1: Not meeting climate targets                    |
+%  ╰──────────────────────────────────────────────────────────────────╯
+\subsection{Falling short of Climate Targets}
 While the U.S. has seen a decline in coal electricity production over the past ten years, many studies indicate that coal power must be phased out entirely by 2035 if we are to meet existing climate goals, such as the global 1.5$^\circ$C target,\sidNote{Update these - new climate goals/policys have since come out}
 % \cite{cui_uschina_2022, hultman_fusing_2020}, 
 net-zero emissions, 
@@ -43,57 +43,93 @@ Instead of proposing new policies, the primary focus of this paper is on underst
 of existing policies and recommend optimal resource allocations. We aim to guide the targeting of these policies toward various aspects of the coal fleet.
 
 
-%  ╭────────────────────────────────────╮
-%  │  timeline fig                      |
-%  ╰────────────────────────────────────╯
+%  ╭──────────────────────────────────────────────────────────────────╮
+%  │  Figure 1: Timeline Figure                                       |
+%  ╰──────────────────────────────────────────────────────────────────╯
+    
 
-\begin{figure}[htb]
-    \centering
-    \begin{minipage}{1\textwidth}
-        \includesvg[inkscapelatex=false,width=\linewidth]{svg_figs/fleetInfo/whatIf_retirement_timeline.svg}  
-        \subcaption{What-If Retirement Timeline}
-    \end{minipage}
-
-    \medskip
-
-    \begin{minipage}{1\textwidth}
-    \begin{adjustbox}{width=\textwidth}
-        \begin{small}
-        \begin{tabular}{|l | r |}
-            \hline
-            \textbf{Metric} & \textbf{Value} \\
-            \hline\hline
-            Total Coal Capacity (as of the end of 2022) \sidTodo{add note on what qualifies as a coal plant} & 201.9 GW\\
-            \hline
-            Required Rate of Retirement per Year to Hit Target: 100\% of Coal Capacity Retired by 2035 & 16.82 GW/yr\\
-            \hline
-            Required Rate of Retirement per Year to Hit Target: 80\% of Coal Capacity Retired by 2035 & 13.46 GW/yr\\
-            \hline
-            Required Rate of Retirement per Year to Hit Target: 50\% of Coal Capacity Retired by 2035 & 8.41 GW/yr\\
-            \hline
-            Average Planned Rate of Retirement between 2023 and 2035 & 5.98 GW/yr\\
-            \hline
-        \end{tabular}
-    \end{small}
-    \end{adjustbox}
-    \subcaption{Actual Retirement Target Requirements}
-    \end{minipage}
-
-    \caption{\textbf{Age-Based Retirement Scenario versus Current State of US Coal Retirements}}
-    \medskip
-    \footnotesize
-
-    \textbf{(a)} A generator-level \textit{What-If} timeline of retiring US coal capacity, making the assumption that coal plants with no planned retirements will retire at 50 years old (see SI.\ref{fig:gen-ages} for an understanding of why this what-if scenario is not realistic).
-    The 50 year old retirement age comes from the average age of retirement of a coal plant in the US, and is supported by Grubert's assertion that most coal capacity will retire when it reaches the age of 50...
-    Regardless, this still leaves us shy of climate targets and hinges very heavily on a large amount of coal capacity retiring very quickly.
-    \textbf{(b)} A breakdown of retirement rates needed to hit climate targets versus the current rate of coal retirements in the US.
-
-    \label{fig:ret_timeline}
-\end{figure}
+    \input{figs/timeline}
 
 
-\subsubsection*{Centralizing Retirement Strategy}
-\stuTodo{Introduce manifold learning method here. } 
+%  ╭──────────────────────────────────────────────────────────────────╮
+%  │  Intro Section 2: Why this is a hard/interesting problem         |
+%  ╰──────────────────────────────────────────────────────────────────╯
+\subsection{The Complexities of Coal Plant Retirement}
+
+\subsubsection{Drawbacks of Vulnerability Scoring and Age-centric Analyses}
+
+Many studies (insert citations here) point to technical, financial, and environmental 
+coal plant attributes as a way to determine low hanging fruit and prioritize retirements, utilizing a composite vulnerability score that combines these factors to guide 
+decision-making. In addition to the technical/environmental/financial vulnerability of a coal plant, there are social, health, and political perspectives that must be accounted for as well, just 
+to name a few. However, even with a comprehensive dataset, a composite vulnerability score approach is an oversimplification of a complex problem.\stuNote{I think this can be combined with Section 1.3 and significantly shortened. With that said, we need a consensus on how to attack addressing coal plant retirement prediction. In my opinion, this is not the purpose of the paper (our method provides understanding of plants that are the most difficult to retire, but we need to decide that providing a "more accurate prediction" of retirement is something we are going after. There are numerous methods that our grouping will undoubtedly improve their predictions, but to what degree and why a particular method was chosen requires from scratch motivation. There is no way to objectively classify a GOOD and BAD prediction.}
+First, by combining data into a single score, a significant amount of detail is lost and nuances/interdependence's are rolled up into a subjective 
+ranking. Different coal plants might operate in diverse contexts, locations, and regulatory environments. What is considered important in 
+one scenario might not hold the same weight in another. Second, deciding how much weight to assign to each factor in the composite score is subjective. Different stakeholders may have 
+different opinions on the importance of various components. Third, a composite score lacks detail and interpretability. Does a high vulnerability score mean a coal plant is 
+overall vulnerable, or does it excel in only one aspect while lagging in others?
+
+
+\subsubsection{Note on a Changing Retirement Landscape}\label{subsec:changing-retirement-landscape}
+
+\stuNote{On condensing these three subsections - I think a lot of this info speaks to \textit{Why this problem is hard} which needs to stated as soon as possible (like right after saying what we did and why it is important - before introduction of method)}
+
+The evolution of coal plant retirements has undergone a significant transformation. 
+In the past, retirements often occurred organically, primarily driven by internal financial considerations, 
+changing market dynamics, or technological obsolescence \textit{insert citation}. 
+These retirements were driven by the economic viability of coal plants and their ability to compete 
+in the energy market. Such retirements were not directly tied to explicit environmental or climate goals. 
+However, the contemporary landscape is marked by a paradigm shift in the rationale behind coal plant retirements. 
+The urgency to address climate change, reduce greenhouse gas emissions, and transition toward cleaner energy 
+sources has become a driving force behind retirement decisions. This shift is propelled by the recognition of 
+the critical role of coal-fired power generation in contributing to global carbon emissions and exacerbating 
+climate-related challenges.
+
+While past retirements might offer insights into operational challenges and procedural aspects of phasing out 
+coal plants, they do not serve as reliable indicators for predicting future retirements. Several reasons underscore 
+this departure from past trends. First, the current impetus for coal phaseout arises from external factors like 
+international climate agreements (e.g., the Paris Agreement), increased public awareness of environmental issues, 
+and regulatory frameworks that prioritize emission reductions. These factors introduce new dynamics that were 
+absent or less pronounced during the organic retirement era. Second, decisions to retire coal plants are now embedded 
+in a complex web of considerations, including economic viability, technological feasibility, regulatory compliance, 
+community impacts, and climate objectives. This multi-dimensional decision landscape surpasses the relatively simpler 
+determinants of past retirements. The involvement of diverse stakeholders, from local communities to environmental 
+organizations, has gained prominence in modern coal phaseout initiatives. Ensuring a just transition for affected 
+communities and addressing social equity concerns were not as central to past retirements. Third, there are new factors playing
+a role in coal plant lifecycles that did not exist a few years ago. For example, crypto-currency has breathed life into dying coal plants. 
+Through both PPAs and increased grid loads, server farms primarily used to 
+mine bit-coin and other blockchain based currencies have began purchasing cheap power from coal plants on the brink, hungry 
+for alternative or additional sources of revenue. \textit{Need citations here, heard about this through work - will need 
+to get more info and make this punchier}
+
+The shift from organic retirements to strategic retirements, motivated by climate and policy objectives as well as declining renewable
+energy prices and government subsidies, introduces complexities 
+that make the application of supervised machine learning challenging in the context of predicting future coal plant retirements. 
+Training on data that includes retired coal plants fails to capture the transformational shift in decision drivers. The need for 
+creative retirement solutions continues to be of paramount importance - assuming coal plants will retire on their own is overly 
+optimistic, neglecting the pressing need for a transition to clean energy.
+
+\sidTodo{This is just a dimensionality rediction. This section should probably be reworked to address the \textbf{why not kmeans} question I posed below this section... We need to: 
+
+1 - why is our dimensionality reduction better / different?
+
+2 - how do multiple perspectives play into this?
+
+3 - not sure the following paragraph is necessary - can be shortened and reworked/added to the second paragraph addressing age in \textit{Coal is Not Being Retired Fast Enough to Meet Climate Targets}
+}
+
+While using vulnerability scores in the context of scenario modeling helps to compare the potential impacts of different phase out strategies and 
+optimize an overall retirement plan, this approach merely produces a prescriptive list that can either be followed or deviated from - without giving 
+the insights required to pursue coal plant retirements on a realistic scale. Additionally, the idea of an \textit{optimal} retirement plan does not work well 
+within the political context of the United States where extraneous reasons can lead coal plants ready for retirement to continue operating long 
+past their prime and/or plants in good economic standing to be shut down early. By delving into these multifaceted dimensions, our study aims to provide a 
+more comprehensive and nuanced perspective, shedding light on the inadequacies of age-centric analyses and offering a more holistic 
+framework for evaluating the future of coal plants in the evolving energy landscape.
+
+%  ╭──────────────────────────────────────────────────────────────────╮
+%  │  Intro Section 3: Our Contributions                              |
+%  ╰──────────────────────────────────────────────────────────────────╯
+
+\subsection{Centralizing Coal Retirement Strategies}
 
 
 To comprehensively address the multifaceted challenges associated with the US Coal Plant Fleet, it is imperative to group coal plants based on various dimensions, 
@@ -115,65 +151,7 @@ Why not rely on past coal plant retirements to forecast future patterns and stra
 That said, rapid shifts in clean energy pricing, government subsidies, utility and state-level climate goals, CO\textsubscript{2} reduction initiatives, and air quality 
 compliance measures have altered the landscape significantly. The dynamics of previous coal plant retirements no longer accurately represent our current context.
 
-% A detailed understanding of the composition and
-% diversity of the US coal fleet facilitates more targeted and thus effective policymaking, better resource allocation, and aids in-depth
-% understandings of the barriers and incentives associated with retiring different facets of coal plants. Understanding coal plant retirement patterns 
-% and guiding the distribution of resources for the phased retirement of coal power plants are crucial aspects we aim to address in this paper.\stuNote{I think we need to end this paragraph on a stronger note... ``it is imperative we elucidate an effective and coordinated centralized strategy"   (made clear from the dire situation of decarbonations from stats above). This is part 1 of motivating why clustering.}
-% =======
-% However, to date there have been no wholistic attempts to
-% classify the US Coal Plant Fleet from an interdisciplinary perspective. Understanding coal plant retirement patterns 
-% and guiding the distribution of resources for the phased retirement of coal power plants are crucial aspects we aim to address in this paper.
 
 
-% A detailed understanding of the composition and
-% diversity of the US coal fleet facilitates more targeted and thus effective policymaking, better resource allocation, and aids in-depth
-% understandings of the barriers and incentives associated with retiring different facets of coal plants. 
-
-
-    %  ╭────────────────────────────────────╮
-    %  │  Drawbacks of Current Approaches   |
-    %  ╰────────────────────────────────────╯
-
-\subsubsection*{Drawbacks of Vulnerability Scoring and Age-centric Analyses}
-
-Many studies (insert citations here) point to technical, financial, and environmental 
-coal plant attributes as a way to determine low hanging fruit and prioritize retirements, utilizing a composite vulnerability score that combines these factors to guide 
-decision-making. In addition to the technical/environmental/financial vulnerability of a coal plant, there are social, health, and political perspectives that must be accounted for as well, just 
-to name a few. However, even with a comprehensive dataset, a composite vulnerability score approach is an oversimplification of a complex problem.\stuNote{I think this can be combined with Section 1.3 and significantly shortened. With that said, we need a consensus on how to attack addressing coal plant retirement prediction. In my opinion, this is not the purpose of the paper (our method provides understanding of plants that are the most difficult to retire, but we need to decide that providing a "more accurate prediction" of retirement is something we are going after. There are numerous methods that our grouping will undoubtedly improve their predictions, but to what degree and why a particular method was chosen requires from scratch motivation. There is no way to objectively classify a GOOD and BAD prediction.}
-First, by combining data into a single score, a significant amount of detail is lost and nuances/interdependence's are rolled up into a subjective 
-ranking. Different coal plants might operate in diverse contexts, locations, and regulatory environments. What is considered important in 
-one scenario might not hold the same weight in another. Second, deciding how much weight to assign to each factor in the composite score is subjective. Different stakeholders may have 
-different opinions on the importance of various components. Third, a composite score lacks detail and interpretability. Does a high vulnerability score mean a coal plant is 
-overall vulnerable, or does it excel in only one aspect while lagging in others?
-
-\sidTodo{This is just a dimensionality rediction. This section should probably be reworked to address the \textbf{why not kmeans} question I posed below this section... We need to: 
-
-1 - why is our dimensionality reduction better / different?
-
-2 - how do multiple perspectives play into this?
-
-3 - not sure the following paragraph is necessary - can be shortened and reworked/added to the second paragraph addressing age in \textit{Coal is Not Being Retired Fast Enough to Meet Climate Targets}
-}
-
-
-
-While using vulnerability scores in the context of scenario modeling helps to compare the potential impacts of different phase out strategies and 
-optimize an overall retirement plan, this approach merely produces a prescriptive list that can either be followed or deviated from - without giving 
-the insights required to pursue coal plant retirements on a realistic scale. Additionally, the idea of an \textit{optimal} retirement plan does not work well 
-within the political context of the United States where extraneous reasons can lead coal plants ready for retirement to continue operating long 
-past their prime and/or plants in good economic standing to be shut down early. By delving into these multifaceted dimensions, our study aims to provide a 
-more comprehensive and nuanced perspective, shedding light on the inadequacies of age-centric analyses and offering a more holistic 
-framework for evaluating the future of coal plants in the evolving energy landscape.
-
-% Other studies \textit{(cite papers here)} look to age as the primary determinant of coal plant retirement. While we intend to demonstrate the shortcomings of this approach 
-% in the coming results, its worth prefacing that numerous factors contribute to the complexities of this decision-making process, and an exclusive focus on age overlooks 
-% critical considerations that significantly impact a plant's viability and potential for continued operation. As evidenced by existing research and industry insights \textit{(cite papers here)},
-% as well as an age breakdown of the current US Coal Fleet (see SI.\ref{fig:gen-ages}),
-% factors such as technological advancements, retrofitting capabilities, environmental compliance, economic incentives, and regional energy demands all play pivotal roles 
-% in determining a coal plant's continued relevance. 
-
-    %  ╭────────────────────────────────────╮
-    %  │  Why Cluster                       |
-    %  ╰────────────────────────────────────╯
 
 

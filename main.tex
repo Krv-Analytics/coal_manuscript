@@ -138,14 +138,8 @@
 %  ╭──────────────────────────────────────────────────────────╮
 %  │ Intro                                                    |
 %  ╰──────────────────────────────────────────────────────────╯
-\stuTodo{I've put in some macros for notes and todos. If my name is Sid, example usage is $\backslash$sidTodo for todos and $\backslash$sidNote for notes. (Supported for Sid, Grace, Stu and Jez.) }
-\input{intro}
 
-\subsection*{Intro Changes:}
-\sidTodo{Why Not Kmeans? -- shorten the intro, especially the details regarding why coal needs to be phased out. Most readers should know this. Focus more on addressing the middle-group of readers (not ES, not ML). 
-After the justification for grouping, we need to address the advantages of our method. Specifically, why not kmeans, why grid search, and what advantages does grap construction bring? This should be done in roughly 1 paragraph...}
-\stuTodo{Why Graphs? - need to motivate the immediate interpretability of graphs and 
-their unrivalled capacity to encode relations}
+\input{intro}
 
 \input{motivating_methodology}
 
@@ -168,16 +162,13 @@ their unrivalled capacity to encode relations}
 \input{methods}
 
 %  ╭──────────────────────────────────────────────────────────╮
-%  │ Post-paper                                               |
+%  │ Appendix                                                 |
 %  ╰──────────────────────────────────────────────────────────╯
 
-\section{Supplemental Info/Figs}
-
-\input{SIs.tex}
-
-\input{FIGS-SIs.tex}
-\input{FIG-MLscoring.tex}
-\input{dataset_tables}
+\input{appendix/SIs.tex}
+\input{figs/FIGS-SIs.tex}
+\input{figs/FIG-MLscoring.tex}
+\input{appendix/dataset_tables}
 
 \end{document}
 
@@ -191,93 +182,5 @@ their unrivalled capacity to encode relations}
 %  │ EXTRAs - will be moved/deleted                           |
 %  ╰──────────────────────────────────────────────────────────╯
 
-
-% \begin{figure}[H]
-%     \includesvg[inkscapelatex=false,width=1\columnwidth]{svg_figs/group_map.svg}
-%     \label{fig:2}
-%     \caption{\textbf{Plant Group Locations} Illustrates the locations of the plants in every group.}
-% \end{figure}
-
-
-
-% \begin{figure}[H]
-%     \includesvg[inkscapelatex=false,width=1\columnwidth]{svg_figs/ml_featureImportance_accuracy.svg}
-%     \includesvg[inkscapelatex=false,width=1\columnwidth]{svg_figs/ml_prediction_accuracy.svg}
-%     \label{fig:2}
-%     \caption{\textbf{Predicting Planned Retirements in the US Coal Plant Fleet} In the top figure, there is a clear difference between each method, with no clear consensus on a subset of variables that are important for predicting planned retirement. In the bottom figure, F1-Scores averaging 0.5 indicate that across 100 different runs, these models do not preform well in terms of their ability to balance precision and recall. 0.8 is considered the standard threshold at which F1-Scores indicate a model has preformed well. In other words, these methods poorly predict planned retirement and the key variables responsible for it.}
-% \end{figure}
-
-
-
-% \begin{figure}[H]
-
-%     \begin{minipage}{0.5\textwidth}
-%         \includegraphics[width=\linewidth]{png_figs/shortest_path/group_1_vulnerability.png}
-%         \subcaption{Group 1 Subgraph}
-%     \end{minipage}%
-%     \begin{minipage}{0.5\textwidth}
-%         \includegraphics[width=\linewidth]{png_figs/shortest_path/group_2_vulnerability.png}
-%         \subcaption{Group 2 Subgraph}
-%     \end{minipage}
-    
-%     \begin{minipage}{0.5\textwidth}
-%         \includegraphics[width=\linewidth]{png_figs/shortest_path/group_3_vulnerability.png}
-%         \subcaption{Group 3 Subgraph}
-%     \end{minipage}%
-%     \begin{minipage}{0.4\textwidth}
-%         \raggedleft
-%         \includesvg[inkscapelatex=false,width=1\linewidth]{svg_figs/vulnerability_barPolar.svg}
-%         \subcaption{Vulnerability Proxies per Group (by coal plant)}
-%     \end{minipage}
-
-%     \caption{\textbf{Proximity To Retirement Graphs} Nodes representing coal plants with the highest percentage of retiring capacity per plant are identified as target nodes. The edges in the graph are weighted to indicate the relationships between nodes. Employing Dijkstra's algorithm, we determine the shortest path and corresponding distance from these target nodes to every other node in the graph. This distance signifies the level of similarity; nodes with shorter paths to target nodes share more similar attributes with the retiring nodes. Conversely, nodes with longer distances have more dissimilar characteristics, indicating a greater divergence from the attributes of the retiring plants within nodes. \textit{Explain edge weighting here as well?}}
-%     \label{fig:3}
-% \end{figure}
-
-% \begin{figure}[H]
-
-%     \begin{minipage}{0.5\textwidth}
-%         \includegraphics[width=\linewidth]{png_figs/shortest_path/group_1_vulnerability.png}  
-%     \end{minipage}%
-%     \begin{minipage}{0.5\textwidth}
-%         \includegraphics[width=\linewidth]{png_figs/shortest_path/group_2_vulnerability.png}  
-%     \end{minipage}
-%     \begin{minipage}{0.5\textwidth}
-%         \includegraphics[width=\linewidth]{png_figs/shortest_path/group_3_vulnerability.png}  
-%     \end{minipage}%
-%     \begin{minipage}{0.4\textwidth}
-%         \raggedleft
-%         \includesvg[inkscapelatex=false,width=1\linewidth]{svg_figs/vulnerability_barPolar.svg}
-%     \end{minipage}
-        
-%     \caption{\textbf{Proximity To Retirement Graphs} Nodes representing coal plants with the highest percentage of retiring capacity per plant are identified as target nodes. The edges in the graph are weighted to indicate the relationships between nodes. Employing Dijkstra's algorithm, we determine the shortest path and corresponding distance from these target nodes to every other node in the graph.
-%     % This is our approximation for a "coarse-grained" geodesic distance in high dimensional space
-%     This distance signifies the level of similarity; nodes with shorter paths to target nodes share more similar attributes with the retiring nodes. Conversely, nodes with longer distances have more dissimilar characteristics, indicating a greater divergence between the plants contained within them and the attributes of the retiring plants within target nodes. \textit{explain edge weighting here as well?}}
-%     \label{fig:3}
-% \end{figure}
-
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=1\textwidth]{png_figs/shortest_path/group_1_vulnerability.png}  
-%     \includegraphics[width=1\textwidth]{png_figs/shortest_path/group_2_vulnerability.png}  
-%     \includegraphics[width=1\textwidth]{png_figs/shortest_path/group_3_vulnerability.png}  
-%     %     \begin{tikzpicture}[overlay, remember picture, on background layer]
-%     %     % Legend elements
-%     %     \foreach \i in {0,1,2,3,4} {
-%     %         \node [rectangle, fill=col\i, minimum size=0.3cm] at ({(\i+0.7)*2.5-7.5+0.3}, 0.5) {};
-%     %         \node [right] at ({(\i+0.7)*2.5-7.2+0.3}, 0.5) {Group \i};}
-%     %     \foreach \i in {5, 6, 7, 8} {
-%     %         \node [rectangle, fill=col\i, minimum size=0.3cm] at ({(\i-3.8)*2.5-7.5+0.3}, -0.1) {};
-%     %         \node [right] at ({(\i-3.8)*2.5-7.2+0.3}, -0.1) {Group \i};}
-%     % \end{tikzpicture}
-%     \caption{\textbf{Coal Fleet Graph} Each group has a unique mix of plant attributes across all categories. \textit{will need to find an additional model that highlights another interesting facet of the coal fleet}}
-%     \label{fig:3}
-% \end{figure}
-
-% \begin{figure}
-%     \includesvg[inkscapelatex=false,width=1\columnwidth]{svg_figs/correlation_matrix.svg}
-%     \label{fig:s1}
-%     \caption{\textbf{Variable Correlation Matrix} Note how the ret\_STATUS variable has a distinct lack of correlation to other variables}
-% \end{figure}
 
 

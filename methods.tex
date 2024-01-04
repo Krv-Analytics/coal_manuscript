@@ -28,12 +28,17 @@ Details we need to cover
 
 
 \subsection{Model Selection}
-High variability in terms of model resolution. So we uniformly sample at random
-from hyperparameter space. (UMAP, Kmapper cubical coverings and percent overlap.)
-For each model we impute by sampling randomly from a normal distrubution based on
-the existing column values (for continuous variables?).
 \jezTodo{ @sid Are we only imputing continuous variables? Will need your exact process
 for the first few sections here.} 
+\begin{itemize}
+\item High variability in terms of model resolution
+\item So we uniformly sample at random
+from hyperparameter space. (UMAP, Kmapper cubical coverings and percent overlap.)
+\item For each model we impute by sampling randomly from a normal distrubution based on
+the existing column values (for continuous variables?).
+\end{itemize}
+
+
 
 \par For this specific problem, we are interested in models that split evenly over capacity but still 
 provide interesting group profiles. We motivate this based on the distribution of the 
@@ -44,7 +49,7 @@ be motivated here from a Coal/policy development perspecitve.}
 
 \begin{figure}[H]
 \centering
-\includesvg[inkscapelatex=false,width=\columnwidth]{svg_figs/distribution-cracking.svg}
+\includesvg[inkscapelatex=false,width=\columnwidth]{figs/svgs/distribution-cracking.svg}
 \subcaption{Cracking Distribution of Capacity (minimizing variance across groups)
 }
 \end{figure}
