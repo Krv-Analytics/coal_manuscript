@@ -1,117 +1,121 @@
 % !TEX program = pdflatex
-% pdflatex -shell-escape outline.tex
 
+\documentclass{article}
+
+\usepackage{xcolor}
 \begin{document}
-\section{Intro Outline}
+% \section{Intro Outline}
 
-% Building a narrative (Stu's way ie thats how Alex does it) 
-%  INTRODUCTION MUST ADRESS:
-%  - why do we want to solve this problem (work towards a solution)
-%  - why was it difficult to solve
-%  - what have we achieved towards solving it 
+% % Building a narrative (Stu's way ie thats how Alex does it) 
+% %  INTRODUCTION MUST ADRESS:
+% %  - why do we want to solve this problem (work towards a solution)
+% %  - why was it difficult to solve
+% %  - what have we achieved towards solving it 
 
-\subsection{What is the problem and why do we want to solve it?}
-\begin{itemize}
-    % \item \textit{given our set of strategies, what is the best way to use them}
-    % \item We leave new coal retirement strategies to our friends at the i.e. sierra club. Why aren't we tryint to make new strategies - because we have to work with what we have, do not have the ability to analyze the efficacy across teh whole coal fleet of things we havent seen before.
-    % \item NOTE: We are not claiming to assign the \textit{best} strategy possible. Instead, given the set of strategies that have been noted as effective per a lit review, we are assigning them to the group in which they result in the highest efficacy.
-    \item ASSUMPTION: Effective coal phase out strategies are a well known and fixed set (We need to research this set!).  
-    \item \textbf{We want to minimize the total time of un-retired US coal plants given this fixed set of strategies} and an assumed upper bound on the resources allocated to doing so (Can we define this realistically? Like how much time/money/influence are we expected to get in the next X years... would be SICK to give an analysis that predicts how much we would need to actually hit that 2035 goal) 
-    \item Motivate... why we don't expect to get unlimited resources to solve this problem and why the set of strategies is (somewhat) fixed 
-    \item Coming up with the best assignment of strategies will decommission coal as quickly as possible, which can be motivated easily by $<$insert plethora of ES work on the subject $>$
-    \item \textbf{We want to identify the most and least problematic sub-groups of coal plants with respect to this set of fixed strategies?}
-    \item Allows us to allocate resources in an efficient manner (don't send a casual fisherman after Moby dick). We can recommend who to go after and who to avoid 
-\end{itemize}
-
-
-\subsection{Why is this problem hard to solve?}
-\textcolor{red}{ARGUABLY THE MOST IMPORTANT PART OF THE INTRO}
- \textit{Predicting a strategy's efficacy for coal plant is HARD (Only ever seen a case by case?)! }
-\begin{itemize}
-    \item Variety of social, ... , factors impact a Coal plants behavior. Understanding its response requires understanding a coal plant and understanding similarity between coal plants
-    \item We assume that similar coal plants will respond (with respect to and up until their similarity) similarly to a given strategy. \item Note that this work around is because we have NO historical data on how coal phase out strategy affects coal plant retirement (retirements B.C. are not helpful here) \textit{therefore we have to understand coal plants holistically before we can predict their responses}
-    \item There are a variety of characters a coal plant could have to make it more or less difficult to effectively apply a strategy. On top of that, the particular relationships of a these characteristics are crucial in understanding strategy efficacy. 
-\end{itemize}
-
-
-\subsection{What have we achieved towards solving it?}
-\textcolor{red}{The main point of this paper is convincing someone we've actually done these things. BUT, we are up a creek without a paddle if we cannot motivate to them what the problem is, why we want to solve it, and why it is difficult to do so. I honestly lose track of this myself quite often because the PROBLEM of Decarbonization is so prevalent, but we need to remember what WE are doing about it.}
-\begin{itemize}
-    \item For the set of coal plants, we prescribe an generalized assignment of strategies that approximately minimizes the total time of un-retired coal plants (assuming fixed resources)
-    \item we have given a data-driven distance from retirement which allows us to proxy efficacy of a prescribed strategy. We can then identify the easy to retire and difficult to retire subgroups 
-\end{itemize}
-
-%  Alex prescription #2 
-
-\section{What we have}
-\begin{itemize}
-    \item an explanation outlining why previously retired plants shouldn't be used to predict retirement now.
-    \item a dataset with a spanning view of the problem (YOU NEED TO BE ABLE TO ARGUE THIS) 
-    \item A clustering of coal plants over all columns of a dataset (groups that are similar according to the 'important' data) 
-    \item A labelling of planned retired plants that gives a distance from retirement 
-\end{itemize}
-
-\section{What we Need}
-\begin{enumerate}
-     \item \textbf{A set of retirement strategies} (also the motivation of why this set is (somewhat) fixed) 
-     \item Matching (not necessarily one-to-one) of strategies onto groups (MAIN RESULT 1)
-     \item A set of most problematic and least problematic coal plants according to the set of strategies above (MAIN RESULT 2) 
-     \item Memorable group names/labels based on most significant characteristics
-     \item A cost/resource proxy for retirement difficulty (easier) 
-     \item A timeline of estimated plant retirement according to path distance + an estimated end date (from literature/simulator) 
-     \item an analysis of ownership for determining "problematic" group 
-     \item WE NEED A WAY TO JUSTIFY THE NUMBER OF POLICY GROUPS SELECTED (the tool gives a lot of resolutions, but we are showing how to use the tool, not what the tool is)
-     \item IDEA: Once we have the set of strategies, we pick the best resolutions
-\end{enumerate}
-
-\section{what we want}
-\begin{itemize}
-    \item A labelling of \textit{forced/early} planned retired plants that gives a distance from retirement  
-    \item A customized timeline based on resource allocation 
-    \item an analysis of the problematic group 
-\end{itemize}
-
-
-\section{After Getting what we need}
-
-\begin{itemize}
-    \item Paper Structure 
-    \item what are going after in the intro/motivation? What figures do we need to communicate our point 
-    \item JEREMY/STU: How are we introducing Manifold Learning + Hyperparameter Selection + graph representations in the intro?  
-    \item JEREMY/STU: methods Section
-    \item Dataset Breakdown for appendix
-    
-\end{itemize}
-
-
+% \subsection{What is the problem and why do we want to solve it?}
 % \begin{itemize}
-%     \item Motivation: \textcolor{green}{FLUFF}:coal is quite bad. Global warming is bad 
-    
-    
-%     \textcolor{blue}{Better} Current analysis of phase out structures is lack luster.
-    
-%     \item Given the same strategies at our disposal right now, how do we use them more effectively? We are concerned with, given the resources you have (global scale or individual NGO level) how can you best use those resources? Objective: retire coal plants. Optimization: where do we focus our resources to achieve the objective.
-%     \item The difficulty here is that analyzing coal plants to match corresponding phase-out strategies is a highly dimensional problem. \textbf{why is it difficult to analyze coal plants to predict how strategies will effect their retirement}
-    
-% \end{itemize}
-
-% \textbf{\textit{we have a way to predict how effective a specific strategy will be at pushing a coal plant or group of plants to retire early}}
-
-% \subsection{ \textbf{Why this problem is hard}}
-% \begin{itemize}
-%     \item you must look at relationships between different facets of data in order to understand a plant's behavior. e.g. Financial data will not give you insight into a plant's financial setting/future (ESG thing) you need to understand financial data in the context of political data, etc. to fully understand a plant.
-%     \item Relationships between plants are valuable not to understand plants better, but to help understand how effective policy will be at targeting multiple plants (Sid's subtle point: historical data on coal plant retirement is not helpful, but current data following the Blah blah is?? This is not immediately understandable (by Stu) so we need to motive!) 
-%     \item if we really understand coal plants, we can understand why certain strategies were effective. if we understand strategy efficacy, we can predict it.
-%     \item we are not suggesting strategy, but if \textit{x} strategy works on \textit{a}, we can tell you how and why it work for \textit{b} based on complex similarities
+%     % \item \textit{given our set of strategies, what is the best way to use them}
+%     % \item We leave new coal retirement strategies to our friends at the i.e. sierra club. Why aren't we tryint to make new strategies - because we have to work with what we have, do not have the ability to analyze the efficacy across teh whole coal fleet of things we havent seen before.
+%     % \item NOTE: We are not claiming to assign the \textit{best} strategy possible. Instead, given the set of strategies that have been noted as effective per a lit review, we are assigning them to the group in which they result in the highest efficacy.
+%     \item ASSUMPTION: Effective coal phase out strategies are a well known and fixed set (We need to research this set!).  
+%     \item \textbf{We want to minimize the total time of un-retired US coal plants given this fixed set of strategies} and an assumed upper bound on the resources allocated to doing so (Can we define this realistically? Like how much time/money/influence are we expected to get in the next X years... would be SICK to give an analysis that predicts how much we would need to actually hit that 2035 goal) 
+%     \item Motivate... why we don't expect to get unlimited resources to solve this problem and why the set of strategies is (somewhat) fixed 
+%     \item Coming up with the best assignment of strategies will decommission coal as quickly as possible, which can be motivated easily by $<$insert plethora of ES work on the subject $>$
+%     \item \textbf{We want to identify the most and least problematic sub-groups of coal plants with respect to this set of fixed strategies?}
+%     \item Allows us to allocate resources in an efficient manner (don't send a casual fisherman after Moby dick). We can recommend who to go after and who to avoid 
 % \end{itemize}
 
 
-% \subsubsection{ \textbf{what have we achieved towards solving it, what we add to the field: }
+% \subsection{Why is this problem hard to solve?}
+% \textcolor{red}{ARGUABLY THE MOST IMPORTANT PART OF THE INTRO}
+%  \textit{Predicting a strategy's efficacy for coal plant is HARD (Only ever seen a case by case?)! }
 % \begin{itemize}
-%     \item we are bring a way to view the problem from a wholistic perspective, something that is distinctly lacking
-%     \item we are allowing comparison not only based on attributes, but based on relationships to plant we know more / less about. 
-%     \item why is it crucial to understand how/why all the different aspects react with / relate to eachother. 
+%     \item Variety of social, ... , factors impact a Coal plants behavior. Understanding its response requires understanding a coal plant and understanding similarity between coal plants
+%     \item We assume that similar coal plants will respond (with respect to and up until their similarity) similarly to a given strategy. \item Note that this work around is because we have NO historical data on how coal phase out strategy affects coal plant retirement (retirements B.C. are not helpful here) \textit{therefore we have to understand coal plants holistically before we can predict their responses}
+%     \item There are a variety of characters a coal plant could have to make it more or less difficult to effectively apply a strategy. On top of that, the particular relationships of a these characteristics are crucial in understanding strategy efficacy. 
 % \end{itemize}
 
 
+% \subsection{What have we achieved towards solving it?}
+% \textcolor{red}{The main point of this paper is convincing someone we've actually done these things. BUT, we are up a creek without a paddle if we cannot motivate to them what the problem is, why we want to solve it, and why it is difficult to do so. I honestly lose track of this myself quite often because the PROBLEM of Decarbonization is so prevalent, but we need to remember what WE are doing about it.}
+% \begin{itemize}
+%     \item For the set of coal plants, we prescribe an generalized assignment of strategies that approximately minimizes the total time of un-retired coal plants (assuming fixed resources)
+%     \item we have given a data-driven distance from retirement which allows us to proxy efficacy of a prescribed strategy. We can then identify the easy to retire and difficult to retire subgroups 
+% \end{itemize}
+
+% %  Alex prescription #2 
+
+% \section{What we have}
+% \begin{itemize}
+%     \item an explanation outlining why previously retired plants shouldn't be used to predict retirement now.
+%     \item a dataset with a spanning view of the problem (YOU NEED TO BE ABLE TO ARGUE THIS) 
+%     \item A clustering of coal plants over all columns of a dataset (groups that are similar according to the 'important' data) 
+%     \item A labelling of planned retired plants that gives a distance from retirement 
+% \end{itemize}
+
+% \section{What we Need}
+% \begin{enumerate}
+%      \item \textbf{A set of retirement strategies} (also the motivation of why this set is (somewhat) fixed) 
+%      \item Matching (not necessarily one-to-one) of strategies onto groups (MAIN RESULT 1)
+%      \item A set of most problematic and least problematic coal plants according to the set of strategies above (MAIN RESULT 2) 
+%      \item Memorable group names/labels based on most significant characteristics
+%      \item A cost/resource proxy for retirement difficulty (easier) 
+%      \item A timeline of estimated plant retirement according to path distance + an estimated end date (from literature/simulator) 
+%      \item an analysis of ownership for determining "problematic" group 
+%      \item WE NEED A WAY TO JUSTIFY THE NUMBER OF POLICY GROUPS SELECTED (the tool gives a lot of resolutions, but we are showing how to use the tool, not what the tool is)
+%      \item IDEA: Once we have the set of strategies, we pick the best resolutions
+% \end{enumerate}
+
+% \section{what we want}
+% \begin{itemize}
+%     \item A labelling of \textit{forced/early} planned retired plants that gives a distance from retirement  
+%     \item A customized timeline based on resource allocation 
+%     \item an analysis of the problematic group 
+% \end{itemize}
+
+
+% \section{After Getting what we need}
+
+% \begin{itemize}
+%     \item Paper Structure 
+%     \item what are going after in the intro/motivation? What figures do we need to communicate our point 
+%     \item JEREMY/STU: How are we introducing Manifold Learning + Hyperparameter Selection + graph representations in the intro?  
+%     \item JEREMY/STU: methods Section
+%     \item Dataset Breakdown for appendix
+    
+% \end{itemize}
+
+\section{Introduction}
+\begin{itemize}
+    \item Background 
+    \item why coal is a problem
+\end{itemize}
+
+\subsection{Falling short of Climate Targets}
+\begin{itemize}
+    \item Establish that Coal will not retire on time (what are the goals and why won't it be hit if left on its own)
+    \item ie if left on its own why won't it speed up (qualitative argument)
+    \item remove timeline figure 
+\end{itemize}
+
+\subsection{The Complexities of Coal Plant retirement}
+Why is our method (not to be discussed here) necessary 
+\subsubsection{Impacting factors for Coal Plants (why look at all the columns)}
+\begin{itemize}
+    \item technology, finance, health, age, geographical localtion ... all impact 
+    \item \textbf{Similar coal plants (along these data fields) are assumed to respond similarly to strategies}
+\end{itemize}
+\subsubsection{Changing Retirmenet Landscpae}
+\begin{itemize}
+    \item Can't use past data 
+    \item prediction becomes difficult (add in curse of dimensionality)
+\end{itemize}
+\subsection{A Guidebook for Stategizing Coal Plant Retirment}
+
+\subsubsection{Why we need localized stragedy}
+\begin{itemize}
+    \item Rather than predicting timelines (which is hard enough not to try), lets look at groups of similar coal plants to formulate a plan to retire coal
+    \item Introduce that there are only a few feasible stategies for shutting down coal plants
+    \item  
+\end{itemize}
 \end{document}

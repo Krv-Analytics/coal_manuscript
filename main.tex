@@ -87,36 +87,9 @@
   citecolor  = bleu,
 }
 
-\title{Coal Manuscript - \textit{WIP draft}}
+\title{Coal Manuscript}
+
 \author{}
-
-% To add affiliations with authors, see: https://tex.stackexchange.com/a/604401/303504
-
-\let\truehypersetup\hypersetup
-\renewcommand\hypersetup[1]{}
-\usepackage{bigfoot}
-\let\hypersetup\truehypersetup
-
-\DeclareNewFootnote{AAffil}[arabic]
-\DeclareNewFootnote{ANote}[fnsymbol]
-
-\usepackage{etoolbox}
-\makeatletter
-\patchcmd\maketitle{\def\@makefnmark{\rlap{\@textsuperscript{\normalfont\@thefnmark}}}}{}{}{}
-\makeatother
-
-% Hook into the \thanks command for the article class to print the footnotes
-\makeatletter
-\def\thanksAAffil#1{%
-  \footnotemarkAAffil\protected@xdef\@thanks{\@thanks%
-        \protect\footnotetextAAffil[\the \c@footnoteAAffil]{#1}}%
-}
-\def\thanksANote#1{%
-  \footnotemarkANote%
-  \protected@xdef\@thanks{\@thanks%
-        \protect\footnotetextANote[\the \c@footnoteANote]{#1}}%
-}
-\makeatother
 
 \date{}
 
@@ -124,16 +97,11 @@
 
 \maketitle
 
-
 %  ╭──────────────────────────────────────────────────────────╮
-%  │ Outline                                                  |
+%  │ Abstract                                                 |
 %  ╰──────────────────────────────────────────────────────────╯
 
-% \input{outline}
-% \input{table_testing.tex}
-\section*{Abstract}
----
-
+\input{files/abstract}
 
 %  ╭──────────────────────────────────────────────────────────╮
 %  │ Intro                                                    |
@@ -164,18 +132,6 @@
 
 \input{files/appendix}
 
-
 \end{document}
-
-
-
-
-
-
-
-%  ╭──────────────────────────────────────────────────────────╮
-%  │ EXTRAs - will be moved/deleted                           |
-%  ╰──────────────────────────────────────────────────────────╯
-
 
 
